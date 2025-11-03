@@ -1,0 +1,17 @@
+
+.MODEL KP201I PJF (
++   VTO =  -2.229
++   BETA =  0.001775
++   LAMBDA =  0.024
++   RD =  1
++   RS =  1
++   IS =  4.615e-13
++   CGD =  6.5e-12
++   CGS =  9e-12
++   PB =  1
++   B =  1
++   KF =  1.145e-16
++   AF =  1
++   FC =  0.5
++   TNOM =  27
+)

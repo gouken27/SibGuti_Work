@@ -1,0 +1,121 @@
+.model 2N2714   NPN(Is=61.01f Xti=3 Eg=1.11 Vaf=57.37 Bf=210 Ne=1.305
++               Ise=72.68f Ikf=97.79m Xtb=1.5 Br=.2181 Nc=2 Isc=0 Ikr=0 Rc=2.14
++               Cjc=6.072p Mjc=.3333 Vjc=.75 Fc=.5 Cje=5.928p Mje=.3333 Vje=.75
++               Tr=1.567u Tf=316.3p Itf=.2 Vtf=5 Xtf=8 Rb=10)
+.model 2N2923   NPN(Is=12.03f Xti=3 Eg=1.11 Vaf=37.37 Bf=180 Ne=1.971
++               Ise=7.171p Ikf=.1072 Xtb=1.5 Br=4.379 Nc=2 Isc=0 Ikr=0 Rc=1
++               Cjc=5.777p Mjc=.3199 Vjc=.75 Fc=.5 Cje=8.307p Mje=.384 Vje=.75
++               Tr=767.1p Tf=385.4p Itf=.17 Vtf=3 Xtf=8 Rb=10)
+.model 2N2924   NPN(Is=12.03f Xti=3 Eg=1.11 Vaf=37.37 Bf=300 Ne=1.971
++               Ise=4.272p Ikf=.1072 Xtb=1.5 Br=4.379 Nc=2 Isc=0 Ikr=0 Rc=1
++               Cjc=5.777p Mjc=.3199 Vjc=.75 Fc=.5 Cje=8.307p Mje=.384 Vje=.75
++               Tr=721.6p Tf=385.4p Itf=.17 Vtf=3 Xtf=8 Rb=10)
+.model 2N2925   NPN(Is=12.03f Xti=3 Eg=1.11 Vaf=37.37 Bf=460 Ne=1.971
++               Ise=2.732p Ikf=.1072 Xtb=1.5 Br=4.379 Nc=2 Isc=0 Ikr=0 Rc=1
++               Cjc=5.777p Mjc=.3199 Vjc=.75 Fc=.5 Cje=8.307p Mje=.384 Vje=.75
++               Tr=698.4p Tf=385.4p Itf=.17 Vtf=3 Xtf=8 Rb=10)
+.model 2N3390   NPN(Is=12.03f Xti=3 Eg=1.11 Vaf=37.37 Bf=680 Ne=1.971
++               Ise=1.842p Ikf=.1072 Xtb=1.5 Br=4.379 Nc=2 Isc=0 Ikr=0 Rc=1
++               Cjc=5.777p Mjc=.3199 Vjc=.75 Fc=.5 Cje=8.307p Mje=.384 Vje=.75
++               Tr=685.3p Tf=385.4p Itf=.17 Vtf=3 Xtf=8 Rb=10)
+.model 2N3391   NPN(Is=12.03f Xti=3 Eg=1.11 Vaf=37.37 Bf=420 Ne=1.971
++               Ise=2.953p Ikf=.1072 Xtb=1.5 Br=4.379 Nc=2 Isc=0 Ikr=0 Rc=1
++               Cjc=5.777p Mjc=.3199 Vjc=.75 Fc=.5 Cje=8.307p Mje=.384 Vje=.75
++               Tr=701.7p Tf=385.4p Itf=.17 Vtf=3 Xtf=8 Rb=10)
+.model 2N3392   NPN(Is=12.03f Xti=3 Eg=1.11 Vaf=37.37 Bf=250 Ne=1.971
++               Ise=4.958p Ikf=.1072 Xtb=1.5 Br=4.379 Nc=2 Isc=0 Ikr=0 Rc=1
++               Cjc=5.777p Mjc=.3199 Vjc=.75 Fc=.5 Cje=8.307p Mje=.384 Vje=.75
++               Tr=732.1p Tf=385.4p Itf=.17 Vtf=3 Xtf=8 Rb=10)
+.model 2N3393   NPN(Is=12.03f Xti=3 Eg=1.11 Vaf=37.37 Bf=160 Ne=1.971
++               Ise=8.195p Ikf=.1072 Xtb=1.5 Br=4.379 Nc=2 Isc=0 Ikr=0 Rc=1
++               Cjc=5.777p Mjc=.3199 Vjc=.75 Fc=.5 Cje=8.307p Mje=.384 Vje=.75
++               Tr=783.8p Tf=385.4p Itf=.17 Vtf=3 Xtf=8 Rb=10)
+.model 2N3394   NPN(Is=61.01f Xti=3 Eg=1.11 Vaf=57.37 Bf=120 Ne=1.305
++               Ise=122.2f Ikf=97.79m Xtb=1.5 Br=.2359 Nc=2 Isc=0 Ikr=0 Rc=2.14
++               Cjc=6.072p Mjc=.3333 Vjc=.75 Fc=.5 Cje=5.928p Mje=.3333 Vje=.75
++               Tr=1.633u Tf=316.3p Itf=.2 Vtf=5 Xtf=8 Rb=10)
+.model 2N3415   NPN(Is=12.03f Xti=3 Eg=1.11 Vaf=37.37 Bf=380 Ne=1.971
++               Ise=3.346p Ikf=.1072 Xtb=1.5 Br=4.379 Nc=2 Isc=0 Ikr=0 Rc=1
++               Cjc=5.777p Mjc=.3199 Vjc=.75 Fc=.5 Cje=8.307p Mje=.384 Vje=.75
++               Tr=707.6p Tf=385.4p Itf=.17 Vtf=3 Xtf=8 Rb=10)
+.model 2N3707   NPN(Is=5.911f Xti=3 Eg=1.11 Vaf=62.37 Bf=530 Ne=1.311
++               Ise=5.911f Ikf=13.31m Xtb=1.5 Br=1.321 Nc=2 Isc=0 Ikr=0 Rc=1.61
++               Cjc=4.017p Mjc=.3174 Vjc=.75 Fc=.5 Cje=4.973p Mje=.4146 Vje=.75
++               Tr=4.708n Tf=819.6p Itf=.35 Vtf=4 Xtf=7 Rb=10)
+.model 2N3711   NPN(Is=5.911f Xti=3 Eg=1.11 Vaf=62.37 Bf=680 Ne=1.339
++               Ise=5.911f Ikf=13.88m Xtb=1.5 Br=1.299 Nc=2 Isc=0 Ikr=0 Rc=1.61
++               Cjc=4.017p Mjc=.3174 Vjc=.75 Fc=.5 Cje=4.973p Mje=.4146 Vje=.75
++               Tr=4.689n Tf=820.4p Itf=.35 Vtf=4 Xtf=7 Rb=10)
+.model 2N3858  NPN(Is=5.911f Xti=3 Eg=1.11 Vaf=62.37 Bf=330 Ne=1.23
++               Ise=5.911f Ikf=11.46m Xtb=1.5 Br=1.465 Nc=2 Isc=0 Ikr=0 Rc=1.61
++               Cjc=4.017p Mjc=.3174 Vjc=.75 Fc=.5 Cje=4.973p Mje=.4146 Vje=.75
++               Tr=4.863n Tf=816.4p Itf=.35 Vtf=4 Xtf=7 Rb=10)
+.model 2N3859   NPN(Is=61.01f Xti=3 Eg=1.11 Vaf=57.37 Bf=220 Ne=1.305
++               Ise=67.23f Ikf=97.79m Xtb=1.5 Br=.2163 Nc=2 Isc=0 Ikr=0 Rc=2.14
++               Cjc=6.072p Mjc=.3333 Vjc=.75 Fc=.5 Cje=5.928p Mje=.3333 Vje=.75
++               Tr=1.56u Tf=524p Itf=.2 Vtf=5 Xtf=8 Rb=10)
+.model 2N3860   NPN(Is=61.01f Xti=3 Eg=1.11 Vaf=57.37 Bf=310 Ne=1.331
++               Ise=61.01f Ikf=.1012 Xtb=1.5 Br=.2092 Nc=2 Isc=0 Ikr=0 Rc=2.14
++               Cjc=6.072p Mjc=.3333 Vjc=.75 Fc=.5 Cje=5.928p Mje=.3333 Vje=.75
++               Tr=1.53u Tf=524.3p Itf=.2 Vtf=5 Xtf=8 Rb=10)
+.model 2N3903   NPN(Is=6.734f Xti=3 Eg=1.11 Vaf=74.03 Bf=340 Ne=1.208
++               Ise=6.734f Ikf=60.26m Xtb=1.5 Br=.8073 Nc=2 Isc=0 Ikr=0 Rc=1
++               Cjc=3.638p Mjc=.3085 Vjc=.75 Fc=.5 Cje=4.493p Mje=.2593 Vje=.75
++               Tr=243.9n Tf=300.8p Itf=.4 Vtf=4 Xtf=2 Rb=10)
+.model 2N3904   NPN(Is=6.734f Xti=3 Eg=1.11 Vaf=74.03 Bf=420 Ne=1.259
++               Ise=6.734f Ikf=66.78m Xtb=1.5 Br=.7371 Nc=2 Isc=0 Ikr=0 Rc=1
++               Cjc=3.638p Mjc=.3085 Vjc=.75 Fc=.5 Cje=4.493p Mje=.2593 Vje=.75
++               Tr=239.5n Tf=301.2p Itf=.4 Vtf=4 Xtf=2 Rb=10)
+.model 2N4124   NPN(Is=6.734f Xti=3 Eg=1.11 Vaf=74.03 Bf=490 Ne=1.28 Ise=6.734f
++               Ikf=69.35m Xtb=1.5 Br=.7214 Nc=2 Isc=0 Ikr=0 Rc=1 Cjc=3.638p
++               Mjc=.3085 Vjc=.75 Fc=.5 Cje=4.493p Mje=.2593 Vje=.75 Tr=238.3n
++               Tf=301.3p Itf=.4 Vtf=4 Xtf=2 Rb=10)
+.model 2N4286   NPN(Is=5.911f Xti=3 Eg=1.11 Vaf=62.37 Bf=610 Ne=1.327
++               Ise=5.911f Ikf=13.63m Xtb=1.5 Br=1.308 Nc=2 Isc=0 Ikr=0 Rc=1.61
++               Cjc=4.017p Mjc=.3174 Vjc=.75 Fc=.5 Cje=4.973p Mje=.4146 Vje=.75
++               Tr=4.696n Tf=820p Itf=.35 Vtf=4 Xtf=7 Rb=10)
+.model 2N4409   NPN(Is=5.911f Xti=3 Eg=1.11 Vaf=62.37 Bf=410 Ne=1.278
++               Ise=5.911f Ikf=12.6m Xtb=1.5 Br=1.361 Nc=2 Isc=0 Ikr=0 Rc=1.61
++               Cjc=4.017p Mjc=.3174 Vjc=.75 Fc=.5 Cje=4.973p Mje=.4146 Vje=.75
++               Tr=4.749n Tf=818.4p Itf=.35 Vtf=4 Xtf=7 Rb=10)
+.model 2N4424   NPN(Is=12.03f Xti=3 Eg=1.11 Vaf=37.37 Bf=380 Ne=1.971
++               Ise=3.346p Ikf=.1072 Xtb=1.5 Br=4.379 Nc=2 Isc=0 Ikr=0 Rc=1
++               Cjc=5.777p Mjc=.3199 Vjc=.75 Fc=.5 Cje=8.307p Mje=.384 Vje=.75
++               Tr=707.6p Tf=385.4p Itf=.17 Vtf=3 Xtf=8 Rb=10)
+.model 2N5172   NPN(Is=12.03f Xti=3 Eg=1.11 Vaf=37.37 Bf=310 Ne=1.971
++               Ise=4.098p Ikf=.1072 Xtb=1.5 Br=4.379 Nc=2 Isc=0 Ikr=0 Rc=1
++               Cjc=5.777p Mjc=.3199 Vjc=.75 Fc=.5 Cje=8.307p Mje=.384 Vje=.75
++               Tr=718.9p Tf=385.4p Itf=.17 Vtf=3 Xtf=8 Rb=10)
+.model 2N5209   NPN(Is=5.911f Xti=3 Eg=1.11 Vaf=62.37 Bf=490 Ne=1.3
++               Ise=5.911f Ikf=13.07m Xtb=1.5 Br=1.333 Nc=2 Isc=0 Ikr=0 Rc=1.61
++               Cjc=4.017p Mjc=.3174 Vjc=.75 Fc=.5 Cje=4.973p Mje=.4146 Vje=.75
++               Tr=4.72n Tf=819.2p Itf=.35 Vtf=4 Xtf=7 Rb=10)
+.model 2N5223   NPN(Is=61.01f Xti=3 Eg=1.11 Vaf=57.37 Bf=310 Ne=1.33
++               Ise=61.01f Ikf=.101 Xtb=1.5 Br=.2094 Nc=2 Isc=0 Ikr=0 Rc=2.14
++               Cjc=6.072p Mjc=.3333 Vjc=.75 Fc=.5 Cje=5.928p Mje=.3333 Vje=.75
++               Tr=1.531u Tf=316.4p Itf=.2 Vtf=5 Xtf=8 Rb=10)
+.model 2N5224   NPN(Is=44.14f Xti=3 Eg=1.11 Vaf=100 Bf=110 Ne=1.389
++               Ise=91.95f Ikf=.3498 Xtb=1.5 Br=12.69m Nc=2 Isc=0 Ikr=0 Rc=.6
++               Cjc=2.83p Mjc=86.19m Vjc=.75 Fc=.5 Cje=4.5p Mje=.2418 Vje=.75
++               Tr=1.073u Tf=227.6p Itf=.3 Vtf=4 Xtf=4 Rb=10)
+.model 2N5232   NPN(Is=5.911f Xti=3 Eg=1.11 Vaf=62.37 Bf=670 Ne=1.338
++               Ise=5.911f Ikf=13.86m Xtb=1.5 Br=1.299 Nc=2 Isc=0 Ikr=0 Rc=1.61
++               Cjc=4.017p Mjc=.3174 Vjc=.75 Fc=.5 Cje=4.973p Mje=.4146 Vje=.75
++               Tr=4.689n Tf=820.3p Itf=.35 Vtf=4 Xtf=7 Rb=10)
+.model 2N5550   NPN(Is=2.511f Xti=3 Eg=1.11 Vaf=100 Bf=210 Ne=1.241
++               Ise=2.511f Ikf=.3495 Xtb=1.5 Br=3.24 Nc=2 Isc=0 Ikr=0 Rc=1
++               Cjc=4.883p Mjc=.3047 Vjc=.75 Fc=.5 Cje=18.79p Mje=.3416 Vje=.75
++               Tr=1.212n Tf=560.1p Itf=50m Vtf=5 Xtf=8 Rb=10)
+.model 2N5551   NPN(Is=2.511f Xti=3 Eg=1.11 Vaf=100 Bf=240 Ne=1.249
++               Ise=2.511f Ikf=.3458 Xtb=1.5 Br=3.197 Nc=2 Isc=0 Ikr=0 Rc=1
++               Cjc=4.883p Mjc=.3047 Vjc=.75 Fc=.5 Cje=18.79p Mje=.3416 Vje=.75
++               Tr=1.202n Tf=560p Itf=50m Vtf=5 Xtf=8 Rb=10)
+.model 2N5830   NPN(Is=2.511f Xti=3 Eg=1.11 Vaf=100 Bf=320 Ne=1.272
++               Ise=2.511f Ikf=.3563 Xtb=1.5 Br=3.102 Nc=2 Isc=0 Ikr=0 Rc=1
++               Cjc=4.883p Mjc=.3047 Vjc=.75 Fc=.5 Cje=18.79p Mje=.3416 Vje=.75
++               Tr=1.186n Tf=560.3p Itf=50m Vtf=5 Xtf=8 Rb=10)
+
+
+
+
+
