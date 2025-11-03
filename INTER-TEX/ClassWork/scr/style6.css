@@ -1,0 +1,199 @@
+/*
+Задача: создать одностраничный макет сайта «Визитка дизайнера»
+1. Подобрать два разных шрифта: один для заголовков, другой для основного текста.
+2. Использовать компоновку:
+o Использовать Flexbox и Grid для расположения элементов на странице.
+o Сделать фиксированную шапку (остается при прокрутке).
+o Использовать “липкое” позиционирование для хотя бы одного блока
+(например, бокового меню или заголовка секции).
+3. Использовать медиазапросы:
+o Для смартфонов до 480px - элементы располагаются в одну колонку.
+o Для ноутбуков от 769px - страница выглядит как полноценный
+двухколоночный макет.
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif; 
+    line-height: 1.6; 
+    color: #333; 
+    margin-top: 100px;
+    background: #f9f9f9;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.6rem;
+}
+
+/* Фиксированная шапка с Flexbox */
+header {
+    position: fixed; /* Фиксация вверху страницы */
+    top: 0;
+    width: 100%;
+    background: #2c3e50;
+    color: white;
+    padding: 1rem; 
+    z-index: 1000; 
+}
+
+/* Навигация с Flexbox для выравнивания элементов */
+nav {
+    display: flex;
+    justify-content: space-between; /* Размещение элементов по краям */
+    align-items: center; /* Центрирование по вертикали */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Стили для списка навигации */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem; /* Отступы между пунктами меню */
+}
+
+/* Стили для ссылок в навигации */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease; /* Плавное изменение цвета при наведении */
+}
+
+nav a:hover {
+    color: #3498db; /* Цвет при наведении */
+}
+
+/* Основной контент страницы */
+main {
+    max-width: 1200px;
+    margin: 60px auto 2rem;
+    padding: 0 1rem;
+}
+
+/* Секция "Обо мне" с Grid */
+.about {
+    display: grid;
+    grid-template-columns: 1fr; /* Одна колонка по умолчанию */
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Липкая боковая панель в секции "Обо мне" */
+.about aside {
+    position: sticky;
+    top: 80px; /* Исправленный отступ сверху для соответствия шапке */
+    background: #e0e0e0;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* Портфолио с Grid */
+.portfolio {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem; 
+    margin-bottom: 2rem;
+}
+
+/* Стили для элементов портфолио (кнопок проектов) */
+.portfolio-item {
+    background: #fff;
+    padding: 1.5rem; /* Увеличенный внутренний отступ */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрирование содержимого */
+    text-align: center;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px); /* Эффект поднятия при наведении */
+}
+
+/* Секция контактов с Flexbox */
+.contacts {
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение */
+    gap: 1rem;
+}
+
+/* Стили для карточек контактов */
+.contact-card {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Смартфоны (до 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem; 
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    nav {
+        flex-direction: column; /* Меню в столбец */
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center; /* Центрирование пунктов меню */
+    }
+
+    .about aside {
+        position: static; /* Отключение липкого позиционирования */
+    }
+}
+
+/* Ноутбуки (от 769px) */
+@media (min-width: 769px) {
+    .about {
+        grid-template-columns: 1fr 3fr; 
+    }
+
+    .portfolio {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .contacts {
+        flex-direction: row; /* Горизонтальное расположение */
+        flex-wrap: wrap;
+    }
+
+    .contact-card {
+        flex: 1 1 45%; /* Карточки занимают половину ширины */
+    }
+}

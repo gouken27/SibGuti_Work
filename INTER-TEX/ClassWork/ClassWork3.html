@@ -1,0 +1,66 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета ученика</title>
+</head>
+<body>
+    <h1>Анкета ученика</h1>
+
+    <video controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        <source src="https://www.w3schools.com/html/mov_bbb.webm" type="video/webm">
+        <p>Ваш браузер не поддерживает воспроизведение видео.</p>
+    </video>
+    <figcaption>Пример образовательного видео</figcaption>
+
+    <table border="1">
+        <caption>Расписание уроков</caption>
+        <thead>
+            <tr>
+                <th>Время</th>
+                <th>Предмет</th>
+                <th>Кабинет</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>09:00-10:00</td>
+                <td>Математика</td>
+                <td>101</td>
+            </tr>
+            <tr>
+                <td>10:15-11:15</td>
+                <td>История</td>
+                <td>202</td>
+            </tr>
+            <tr>
+                <td>11:30-12:30</td>
+                <td>Информатика</td>
+                <td>305</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <section>
+        <a href="../index.html">главная страница</a>
+    </section>
+
+    <form action="/submit" method="post">
+        <label for="name">Имя:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        
+        <label for="email">Почта:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        
+        <label for="subject">Любимый предмет:</label><br>
+        <select id="subject" name="subject" required>
+            <option value="math">Математика</option>
+            <option value="history">История</option>
+            <option value="informatics">Информатика</option>
+        </select><br>
+        
+        <input type="submit" value="Отправить">
+    </form>
+</body>
+</html>

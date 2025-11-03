@@ -1,0 +1,14 @@
+.model midPNP01	PNP(Is=336.7f Xti=3 Eg=1.11 Vaf=100 Bf=89.34 Ne=1.5 Ise=0
++		Ikf=.6 Xtb=1.5 Br=.2996 Nc=2 Isc=0 Ikr=0 Rc=.5 Cjc=39.63p
++		Mjc=.3357 Vjc=.75 Fc=.5 Cje=87.82p Mje=.3551 Vje=.75 Tr=252.1n
++		Tf=800p Itf=0 Vtf=0 Xtf=0 Rb=10)
+*		National	pid=70		case=TO39
+*		88-09-08 bam	creation
+*$
+.model midPNP02	PNP(Is=5.911f Xti=3 Eg=1.11 Vaf=62.37 Bf=990.7 Ne=1.38
++		Ise=5.911f Ikf=14.67m Xtb=1.5 Br=1.276 Nc=2 Isc=0 Ikr=0 Rc=1.61
++		Cjc=4.017p Mjc=.3174 Vjc=.75 Fc=.5 Cje=4.973p Mje=.4146 Vje=.75
++		Tr=4.675n Tf=821.4p Itf=.35 Vtf=4 Xtf=7 Rb=10)
+*		National	pid=07		case=TO18
+*		88-09-07 bam	creation
+*$
