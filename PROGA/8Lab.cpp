@@ -1,151 +1,147 @@
+#include "Database.hpp"
 #include <iostream>
 #include <iomanip>
-using namespace std;
-struct School {
-    int number;
-    int graduates;
-    int admitted;
-};
-int main(){
-    int n;
-    cout << "Enter number of schools: ";
-    cin >> n;
-    School* schools = new School[n];
-    for(int i = 0; i < n; i++){
-        cout << "Enter school number, number of graduates and number admitted: ";
-        cin >> schools[i].number >> schools[i].graduates >> schools[i].admitted;
-    }
-    int* indices = new int[n];
-    for(int i = 0; i < n; i++){
-        indices[i] = i;
-    }
-    for(int i = 0; i < n - 1; i++){
-        for(int j = i + 1; j < n; j++){
-            double perc_i = static_cast<double>(schools[indices[i]].admitted) / schools[indices[i]].graduates;
-            double perc_j = static_cast<double>(schools[indices[j]].admitted) / schools[indices[j]].graduates;
-            if(perc_i > perc_j){
-                int temp = indices[i];
-                indices[i] = indices[j];
-                indices[j] = temp;
-            }
-        }
-    }
-    cout << "\nSchool\tGraduates\tPercentage admitted\n";
-    for(int i = 0; i < n; i++){
-        int idx = indices[i];
-        double percentage = static_cast<double>(schools[idx].admitted) / schools[idx].graduates * 100;
-        cout << schools[idx].number << "\t" << schools[idx].graduates << "\t\t"
-             << fixed << setprecision(2) << percentage << "%" << "\n";
-    }
-    delete[] schools;
-    delete[] indices;
-    return 0;
+#include <algorithm>
+#include <map>
+#include <cmath>
+
+// --- Вспомогательная функция для печати ---
+void printSchoolHeader() {
+    std::cout << "\n----------------------------------------------------------\n";
+    std::cout << "| № Школы | Выпускники | Поступившие | % Поступивших |\n";
+    std::cout << "----------------------------------------------------------\n";
 }
 
-/*2*/
+// --- Задача 1: Анализ школ и сортировка индексным массивом ---
 
-#include <iostream>
-#include <string>#include <iostream>
-#include <string>
-using namespace std;
-struct Room {
-    int roomNumber;
-    double area;
-    string faculty;
-    int residents;
-};
-int main(){
-    int n;
-    cout << "Enter number of rooms: ";
-    cin >> n;
-    Room* rooms = new Room[n];
-    for(int i = 0; i < n; i++){
-        cout << "Enter room number, area, faculty, and number of residents for room " << i + 1 << ": ";
-        cin >> rooms[i].roomNumber >> rooms[i].area >> rooms[i].faculty >> rooms[i].residents;
-    }
-    int facultyCount = 0;
-    string* faculties = new string[n];
-    for(int i = 0; i < n; i++){
-        bool exists = false;
-        for(int j = 0; j < facultyCount; j++){
-            if(rooms[i].faculty == faculties[j]){
-                exists = true;
-                break;
-            }
+void schoolAnalysisDemo() {
+    std::cout << "--- Задача 1: Анализ школ ---\n";
+
+    // 1. Формирование массива из записей (пример данных)
+    std::vector<SchoolRecord> schools = {
+        {101, 120, 95, 0.0},
+        {5, 80, 78, 0.0},
+        {45, 150, 100, 0.0},
+        {12, 110, 80, 0.0},
+        {200, 50, 25, 0.0}
+    };
+
+    // Вычисление процента поступивших и заполнение индексного массива
+    int N = schools.size();
+    std::vector<int> index_array(N);
+
+    for (int i = 0; i < N; ++i) {
+        // Вычисление процента
+        if (schools[i].graduates > 0) {
+            schools[i].admission_rate = 
+                (static_cast<double>(schools[i].admitted) / schools[i].graduates) * 100.0;
+        } else {
+            schools[i].admission_rate = 0.0;
         }
-        if(!exists){
-            faculties[facultyCount++] = rooms[i].faculty;
-        }
+        // Инициализация индексного массива
+        index_array[i] = i;
     }
-    cout << "\nFaculty Summary:\n";
-    cout << "Faculty\tRooms\tStudents\tAvg area per student\n";
-    for(int i = 0; i < facultyCount; i++){
-        int roomCount = 0;
-        int totalStudents = 0;
-        double totalArea = 0;
-        for(int j = 0; j < n; j++){
-            if(rooms[j].faculty == faculties[i]){
-                roomCount++;
-                totalStudents += rooms[j].residents;
-                totalArea += rooms[j].area;
-            }
+
+    // 2. Сортировка индексного массива
+    // Сортируем индексы так, чтобы при обращении schools[index_array[i]]
+    // массив был упорядочен по admission_rate (по убыванию)
+    std::sort(index_array.begin(), index_array.end(), 
+        [&schools](int a, int b) {
+            // Сортировка по убыванию процента поступивших
+            return schools[a].admission_rate > schools[b].admission_rate;
         }
-        double avgArea = (totalStudents > 0) ? totalArea / totalStudents : 0;
-        cout << faculties[i] << "\t" << roomCount << "\t" << totalStudents << "\t\t" << avgArea << "\n";
+    );
+
+    // 3. Вывод данных
+    std::cout << "Данные о школах, отсортированные по проценту поступивших (по убыванию):\n";
+    printSchoolHeader();
+    std::cout << std::fixed << std::setprecision(2);
+
+    for (int idx : index_array) {
+        const SchoolRecord& s = schools[idx]; // Доступ к данным через отсортированный индекс
+        std::cout << "| " << std::setw(7) << s.number 
+                  << " | " << std::setw(10) << s.graduates
+                  << " | " << std::setw(11) << s.admitted
+                  << " | " << std::setw(14) << s.admission_rate << " |\n";
     }
-    delete[] rooms;
-    delete[] faculties;
-    return 0;
+    std::cout << "----------------------------------------------------------\n";
 }
 
+// --- Задача 2: Анализ общежития и факультетов ---
 
-using namespace std;
-struct Room {
-    int roomNumber;
-    double area;
-    string faculty;
-    int residents;
-};
-int main(){
-    int n;
-    cout << "Enter number of rooms: ";
-    cin >> n;
-    Room* rooms = new Room[n];
-    for(int i = 0; i < n; i++){
-        cout << "Enter room number, area, faculty, and number of residents for room " << i + 1 << ": ";
-        cin >> rooms[i].roomNumber >> rooms[i].area >> rooms[i].faculty >> rooms[i].residents;
-    }
-    int facultyCount = 0;
-    string* faculties = new string[n];
-    for(int i = 0; i < n; i++){
-        bool exists = false;
-        for(int j = 0; j < facultyCount; j++){
-            if(rooms[i].faculty == faculties[j]){
-                exists = true;
-                break;
-            }
+void dormitoryAnalysisDemo() {
+    std::cout << "\n--- Задача 2: Анализ общежития ---\n";
+
+    // 1. Формирование справочника факультетов (используем std::map для быстрого поиска по ID)
+    std::map<int, Faculty> faculty_directory = {
+        {1, {1, "Информационные технологии"}},
+        {2, {2, "Экономика и Финансы"}},
+        {3, {3, "Юриспруденция"}},
+        {4, {4, "Дизайн и Архитектура"}}
+    };
+
+    // 2. Формирование базы данных комнат
+    std::vector<DormRoom> dorm_rooms = {
+        {101, 18.5, 1, 2},
+        {102, 18.0, 1, 3},
+        {201, 20.0, 2, 2},
+        {202, 19.5, 3, 4},
+        {203, 21.0, 2, 3},
+        {301, 16.0, 1, 1},
+        {302, 22.0, 4, 3},
+        {303, 20.0, 3, 2},
+        {401, 25.0, 4, 4}
+    };
+
+    // --- Сводная статистика ---
+    struct FacultyStats {
+        int room_count = 0;
+        int student_count = 0;
+        double total_area = 0.0;
+    };
+    
+    // Карта для хранения статистики: Ключ = ID факультета
+    std::map<int, FacultyStats> stats_by_faculty;
+
+    // Сбор статистики по комнатам
+    for (const auto& room : dorm_rooms) {
+        int id = room.faculty_id;
+        
+        // Убедимся, что ID существует в справочнике, прежде чем обновлять статистику
+        if (faculty_directory.count(id)) {
+            stats_by_faculty[id].room_count++;
+            stats_by_faculty[id].student_count += room.residents;
+            stats_by_faculty[id].total_area += room.area;
+        } else {
+            std::cerr << "Предупреждение: Комната " << room.room_number 
+                      << " имеет неизвестный Faculty ID: " << id << std::endl;
         }
-        if(!exists){
-            faculties[facultyCount++] = rooms[i].faculty;
-        }
     }
-    cout << "\nFaculty Summary:\n";
-    cout << "Faculty\tRooms\tStudents\tAvg area per student\n";
-    for(int i = 0; i < facultyCount; i++){
-        int roomCount = 0;
-        int totalStudents = 0;
-        double totalArea = 0;
-        for(int j = 0; j < n; j++){
-            if(rooms[j].faculty == faculties[i]){
-                roomCount++;
-                totalStudents += rooms[j].residents;
-                totalArea += rooms[j].area;
-            }
+
+    // 3. Вывод данных по каждому факультету
+    std::cout << "\nСводная статистика по факультетам:\n";
+    std::cout << "----------------------------------------------------------------------------------------------------\n";
+    std::cout << "| ID | Факультет                      | Комнат | Студентов | Общая площадь | Средняя площадь на 1 ст. |\n";
+    std::cout << "----------------------------------------------------------------------------------------------------\n";
+
+    std::cout << std::fixed << std::setprecision(2);
+
+    for (const auto& pair : stats_by_faculty) {
+        int id = pair.first;
+        const FacultyStats& stats = pair.second;
+        const std::string& name = faculty_directory[id].name;
+        
+        double avg_area_per_student = 0.0;
+        if (stats.student_count > 0) {
+            avg_area_per_student = stats.total_area / stats.student_count;
         }
-        double avgArea = (totalStudents > 0) ? totalArea / totalStudents : 0;
-        cout << faculties[i] << "\t" << roomCount << "\t" << totalStudents << "\t\t" << avgArea << "\n";
+
+        std::cout << "| " << std::setw(2) << id << " | " 
+                  << std::setw(30) << std::left << name << std::right << " | "
+                  << std::setw(6) << stats.room_count << " | "
+                  << std::setw(9) << stats.student_count << " | "
+                  << std::setw(13) << stats.total_area << " | "
+                  << std::setw(24) << avg_area_per_student << " |\n";
     }
-    delete[] rooms;
-    delete[] faculties;
-    return 0;
+    std::cout << "----------------------------------------------------------------------------------------------------\n";
 }

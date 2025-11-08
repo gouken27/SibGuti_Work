@@ -1,44 +1,85 @@
-#include <iostream>
+#include "Database.hpp"
 #include <fstream>
-#include <sstream>
-#include <vector>
-#include <string>
+#include <iostream>
 #include <algorithm>
+#include <sstream>
 
-int main() {
-    std::ifstream fin("input.txt");
-    if (!fin) {
-        std::cerr << "Ошибка: не удалось открыть файл input.txt для чтения.\n";
-        return 1;
+using namespace std;
+
+/**
+ * @brief Функция для создания исходного файла с тестовыми данными.
+ */
+bool createSourceFile(const std::string& filename) {
+    ofstream file(filename);
+    if (!file.is_open()) {
+        cerr << "Ошибка: Не удалось открыть файл для записи: " << filename << endl;
+        return false;
     }
 
-    std::vector<std::string> words;
-    std::string line;
+    file << "Красный это цвет\n";
+    file << "Зеленый трава\n";
+    file << "А синий небо\n";
+    file << "Разные цвета красиво\n";
+    
+    file.close();
+    cout << "Исходный файл \"" << filename << "\" успешно создан." << endl;
+    return true;
+}
 
-    while (std::getline(fin, line)) {
-        std::istringstream iss(line);
-        std::string word;
-        while (iss >> word) {
-            words.push_back(word);
+/**
+ * @brief Функция для чтения, сортировки и записи слов.
+ */
+bool processAndSortWords(const std::string& source_filename, 
+                         const std::string& target_filename, 
+                         std::vector<std::string>& all_words) {
+    
+    ifstream source_file(source_filename);
+    if (!source_file.is_open()) {
+        cerr << "Ошибка: Не удалось открыть исходный файл: " << source_filename << endl;
+        return false;
+    }
+
+    string line;
+    all_words.clear(); // Очищаем список слов перед заполнением
+
+    // 1. Считывание строк и разбиение на слова
+    while (getline(source_file, line)) {
+        stringstream ss(line);
+        string word;
+        
+        // Разбиваем строку на слова с использованием строкового потока
+        while (ss >> word) {
+            // Удаляем возможные знаки препинания в конце слова, если необходимо
+            // В данном примере просто добавляем слово
+            all_words.push_back(word); 
         }
     }
-    fin.close();
 
-    // Сортируем
-    std::sort(words.begin(), words.end());
-
-    // Открываем и записываем отсортированные слова
-    std::ofstream fout("output.txt");
-    if (!fout) {
-        std::cerr << "Ошибка: не удалось открыть файл output.txt для записи.\n";
-        return 1;
+    source_file.close();
+    
+    if (all_words.empty()) {
+        cerr << "Предупреждение: Файл не содержит слов." << endl;
+        return false;
     }
 
-    for (const auto& w : words) {
-        fout << w << "\n";
-    }
-    fout.close();
+    // 2. Сортировка слов по алфавиту
+    // Используем std::sort для сортировки std::vector<std::string>
+    // Сортировка по алфавиту (лексикографический порядок) по умолчанию
+    sort(all_words.begin(), all_words.end());
 
-    std::cout << "Готово! Отсортированные слова записаны в output.txt.\n";
-    return 0;
+    // 3. Вывод отсортированных слов во второй файл
+    ofstream target_file(target_filename);
+    if (!target_file.is_open()) {
+        cerr << "Ошибка: Не удалось открыть целевой файл для записи: " << target_filename << endl;
+        return false;
+    }
+
+    for (const string& word : all_words) {
+        target_file << word << endl; // Каждое слово на новой строке
+    }
+
+    target_file.close();
+    cout << "Отсортированные слова успешно записаны в файл \"" << target_filename << "\"." << endl;
+    
+    return true;
 }
