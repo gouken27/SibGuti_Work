@@ -8,10 +8,51 @@
     <link rel="stylesheet" href="./scr/mediaZ.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <title>Топ аниме</title>
+
+    <style>
+        /* Базовая светлая тема */
+        body {
+            --bg-color: #f0f0f0; /* Светлый фон */
+            --text-color: #1a1a1a; /* Темный текст */
+            --header-bg: #ffffff;
+            --link-color: #007bff;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: all 0.5s ease; /* Плавный переход */
+        }
+
+        /* Темная тема - активируется классом .dark на <body> */
+        body.dark {
+            --bg-color: #121212; /* Темный фон */
+            --text-color: #e0e0e0; /* Светлый текст */
+            --header-bg: #1f1f1f;
+            --link-color: #8ab4f8;
+        }
+
+        header, footer {
+            background-color: var(--header-bg);
+            color: var(--text-color);
+        }
+        
+        /* Стили для кнопки переключения темы */
+        #theme-toggle {
+            padding: 8px 15px;
+            border: 1px solid var(--text-color);
+            background-color: var(--header-bg);
+            color: var(--text-color);
+            cursor: pointer;
+            border-radius: 5px;
+            float: right; /* Размещаем справа в шапке */
+            margin-top: 10px;
+        }
+    </style>
+
 </head>
 <body>
     <header>
         <h1>Топ Аниме: Лучшие Истории Японской Анимации</h1>
+
+        <button id="theme-toggle">Сменить тему (Светлая)</button>
 
         <div class="videos">
             <video controls>
@@ -24,16 +65,16 @@
         <div id="linkses">
             <nav>
                 <ul>
-                    <li><a href="/pages/fantasy.html">Топ Фэнтези Аниме</a></li>
-                    <li><a href="/pages/isekai.html">Топ <abbr title="Исекай - жанр, где герой переносится в другой мир">Исекай</abbr> Аниме</a></li>
-                    <li><a href="/pages/seinen.html">Топ Сэйнэн Аниме</a></li>
-                    <li><a href="/pages/romance.html">Топ Романтика Аниме</a></li>
-                    <li><a href="/pages/mecha.html">Топ Меха Аниме</a></li>
-                    <li><a href="/pages/sliceoflife.html">Топ Повседневность Аниме</a></li>
-                    <li><a href="/pages/action.html">Топ Экшен Аниме</a></li>
-                    <li><a href="/pages/shounen.html">Топ Сёнэн Аниме</a></li>
-                    <li><a href="/pages/horror.html">Топ Хоррор Аниме</a></li>
-                    <li><a href="/pages/comedy.html">Топ Комедия Аниме</a></li>
+                    <li><a href="pages/fantasy.html">Топ Фэнтези Аниме</a></li>
+                    <li><a href="pages/isekai.html">Топ <abbr title="Исекай - жанр, где герой переносится в другой мир">Исекай</abbr> Аниме</a></li>
+                    <li><a href="pages/seinen.html">Топ Сэйнэн Аниме</a></li>
+                    <li><a href="pages/romance.html">Топ Романтика Аниме</a></li>
+                    <li><a href="pages/mecha.html">Топ Меха Аниме</a></li>
+                    <li><a href="pages/sliceoflife.html">Топ Повседневность Аниме</a></li>
+                    <li><a href="pages/action.html">Топ Экшен Аниме</a></li>
+                    <li><a href="pages/shounen.html">Топ Сёнэн Аниме</a></li>
+                    <li><a href="pages/horror.html">Топ Хоррор Аниме</a></li>
+                    <li><a href="pages/comedy.html">Топ Комедия Аниме</a></li>
                 </ul>
             </nav>
         </div>
@@ -70,11 +111,16 @@
 
     <div class="linkWork">
         <section>
-            <a href="ClassWork/ClassWork3.html">3-ая классная работа</a>
-            <a href="ClassWork/ClassWork4.html">4-ая классная работа</a>
-            <a href="ClassWork/ClassWork5.html">5-ая классная работа</a>
-            <a href="ClassWork/ClassWork6.html">6-ая классная работа</a>
-            <a href="ClassWork/ClassWork7.html">7-ая классная работа</a>
+            <a href="ClassWork/Documents/ClassWork3.html">3-ая классная работа</a>
+            <a href="ClassWork/Documents/ClassWork4.html">4-ая классная работа</a>
+            <a href="ClassWork/Documents/ClassWork5.html">5-ая классная работа</a>
+            <a href="ClassWork/Documents/ClassWork6.html">6-ая классная работа</a>
+            <a href="ClassWork/Documents/ClassWork7.html">7-ая классная работа</a>
+            <a href="ClassWork/Documents/ClassWork8.html">8-ая классная работа</a>
+            <a href="ClassWork/Documents/ClassWork9.html">9-ая классная работа</a>
+            <a href="ClassWork/Documents/ClassWork10.html">10-ая классная работа</a>
+            <a href="ClassWork/Documents/ClassWork11.html">11-ая классная работа</a>
+
         </section>
     </div>
     
@@ -83,7 +129,7 @@
         <p>ФИО : Панин Андрей Евгеньевич</p>
         <p>Группа: ИП-416</p>
         <p>СибГУТИ 2025</p>
-        <a href="feedback/feedback.html">
+        <a href="scr/feedback/feedback.html">
             Обратная связь
         </a>
     </footer>
