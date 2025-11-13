@@ -1,8 +1,0 @@
-STATUS: MicroSim Schematics to Capture translator (9.1.1392)
-STATUS:  
-STATUS: Translator started at Sunday, March 04, 2007 18:20:02
-STATUS: e:\OrCAD91\Capture\sch2cap -f "E:\LabsEWB\EWB50Cdin\MODELS\DIODE\rus.lib" -o "E:\LabsEWB\EWB50Cdin\MODELS\DIODE\rus.olb" -i C:\WINDOWS\pspice91.ini -s D226
-   INFO: Using existing library 'e:\OrCAD91\Capture\Library\PSpice\modeled.etc'.
-   INFO: Using existing library 'E:\LabsEWB\EWB50Cdin\MODELS\DIODE\rus.olb'.
-STATUS: Translator stopped at Sunday, March 04, 2007 18:20:03
-STATUS: 0 Error messages, 0 Warning messages
