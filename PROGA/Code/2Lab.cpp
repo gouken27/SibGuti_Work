@@ -1,86 +1,101 @@
-#include "Database.hpp"
+#include <stdlib.h> 
 #include <iostream>
+#include <ctime>
+using namespace std;
+#define N 15
 
-/**
- * @brief 1. Реализация рекурсивного ввода/вывода.
- */
-void readAndPrintPositive() {
-    int num;
-    std::cin >> num;
+void recursion_one(){
+	int x;
+	cin>>x;
+	if (x != 0){
+		if (x>0) cout<<x<<"   ";
+		recursion_one();	
 
-    // Базовый случай рекурсии:
-    // Если ввели 0, прекращаем ввод и начинаем "размотку" стека.
-    if (num == 0) {
-        return;
-    }
+	} 
+	
+}
+void one(){
+	cout<<"������� �����:\n";
+	//1. ������ � ����������� ������� � ���������� ������������������ ����� ��������������� ������ ����, � ������� �� ����� ������ ������������� �����. 
+	//������ �� ������������.
+	recursion_one();
+	cout<<"\n";
+} 
 
-    // Рекурсивный вызов:
-    // Сначала вызываем функцию для следующего числа.
-    readAndPrintPositive();
-
-    // Действие "на обратном ходу":
-    // Этот код выполнится *после* того, как рекурсия
-    // дошла до 0 и начала возвращаться обратно.
-    // Поэтому числа печатаются в обратном порядке.
-    if (num > 0) {
-        std::cout << num << " ";
-    }
+void recursion_two(int * a,int i=0, bool plus=0){
+	if (i<N){
+		if (plus && a[i]>0){
+			cout<<a[i]<<" "; 
+		}
+		if (!plus && a[i]<0){
+			cout<<a[i]<<" "; 
+		}
+		recursion_two(a,i+1, plus);
+	}
+	else if (!plus){
+		recursion_two(a,0, 1);
+	}	
 }
 
-/**
- * @brief Вспомогательная рекурсивная функция для printNegPos.
- * @param arr Массив.
- * @param n Размер.
- * @param index Текущий индекс.
- */
-static void printNegPosRecursive(int arr[], int n, int index) {
-    // Базовый случай:
-    // Если дошли до конца массива, останавливаемся.
-    if (index == n) {
-        return;
-    }
+void two(){
+	int arr[N];
+	srand(time(NULL));
+	for (int i=0;i<15;i++)
+		arr[i]=rand()%100-50;
+	
+	cout<<"��������� ������:\n";
+	for (int i=0;i<15;i++)
+		cout<<arr[i]<<"  ";
+	cout<<"\n\n\n";
+	cout<<"���������:\n";
+	recursion_two(arr);
 
-    // Действие "на прямом ходу":
-    // Если число отрицательное, печатаем его сразу.
-    if (arr[index] < 0) {
-        std::cout << arr[index] << " ";
-    }
+	cout<<"\n";
+} 
 
-    // Рекурсивный вызов:
-    // Переходим к следующему элементу.
-    printNegPosRecursive(arr, n, index + 1);
 
-    // Действие "на обратном ходу":
-    // Этот код выполнится, когда рекурсия дойдет до конца
-    // и начнет возвращаться.
-    // Если число положительное, печатаем его.
-    if (arr[index] > 0) {
-        std::cout << arr[index] << " ";
-    }
+void recursion_three(int x){
+		if (x>0){
+			if (x>1)  
+				recursion_three(x/2); 
+			cout<<(x-(x/2)*2); 
+		}
+		else cout<"������� ������������� �����";
 }
 
-/**
- * @brief 2. Функция-обертка, которую вызывает пользователь.
- * Она скрывает детали реализации (например, начальный индекс).
- */
-void printNegPos(int arr[], int n) {
-    // Вызываем рекурсивную функцию с начальным индексом 0
-    printNegPosRecursive(arr, n, 0);
-    std::cout << std::endl; // Для чистоты вывода
+
+void three(){
+	//	3. �������� ����������� ������� ��� �������� ����� �� ���������� ������� ��������� � ��������.
+	int x;
+	cout<<"������� �����: ";
+	cin>>x;
+	cout<<"\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n����� � 10 �������: "<<x<<"\n����� � 2 �������: ";
+	recursion_three(x);
+	cout<<endl;
+
 }
 
-/**
- * @brief 3. Реализация перевода в двоичную систему.
- */
-void decimalToBinary(int n) {
-    // Базовый случай:
-    // Если число больше 1, продолжаем деление.
-    if (n > 1) {
-        decimalToBinary(n / 2);
+main(){ 
+	setlocale(LC_ALL, "Russian");
+	system("chcp 1251  > text");
+    int choice; 
+   	cout<<"Input number of task (Number from 1 to 3):"; 
+    cin>>choice;
+	system("CLS"); 
+    if(choice == 1){ 
+        one(); 
+    } 
+    else if(choice == 2){ 
+        two(); 
     }
-
-    // Действие "на обратном ходу":
-    // Печатаем остаток от деления на 2.
-    // Из-за "размотки" стека цифры печатаются в правильном порядке.
-    std::cout << (n % 2);
+    
+    else if(choice == 3){ 
+        three(); 
+    }
+    
+system("PAUSE");
+return 0; 
 }
+
+
+

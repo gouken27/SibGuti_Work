@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <Database.hpp>
 
 int main() {
     int choice;
@@ -30,9 +30,18 @@ int main() {
 
     switch(choice) {
         case 1:
-            printf("");
+            printf("Выберите задание");
+            switch(choice2) {
+                case 1:
+                    void DateEaster();
+                    break;
+                case 2:
+                    int exponentiation(float x ,float n);
+                    break;
+                case 3:
+                    void calculationCosinus();
+            }
             break;
-            
         case 2:
             printf("");
             break;

@@ -1,102 +1,76 @@
-#include "Database.hpp" // Подключаем наш заголовочный файл
-#include <cmath>     // Подключаем для std::fabs, std::fmod, INFINITY и M_PI
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-// Определяем M_PI, если он не определен (актуально для некоторых компиляторов)
-#ifndef M_PI
-#define M_PI 3.14159265358979323846
-#endif
+// прототипы функций
+void calculateEasterDate(int);
+double power(double, int );
+double calculateCosinus(double, double);
 
-/**
- * @brief 1. Реализация вычисления даты Пасхи.
- */
-EasterDate calculateEaster(int year) {
-    // Алгоритм Гаусса для православной Пасхи
-    int a = year % 19;
-    int b = year % 4;
-    int c = year % 7;
-    int d = (19 * a + 15) % 30;
-    int e = (2 * b + 4 * c + 6 * d + 6) % 7;
-    int f = d + e;
+// функция для вычисления даты Пасхи по алгоритму Гаусса
+void calculateEasterDate(int year) {
+  int a = year % 19;
+  int b = year % 4;
+  int c = year % 7;
+  int d = (19 * a + 15) % 30;
+  int e = (2 * b + 4 * c + 6 * d + 6) % 7;
+  int f = d + e;
 
-    EasterDate result;
-    
-    // Этот алгоритм (с 4 апреля) корректно работает
-    // для григорианского календаря в XX-XXI веках.
-    if (f <= 26) {
-        result.day = 4 + f;
-        result.month = "Апреля";
-    } else {
-        result.day = f - 26;
-        result.month = "Мая";
-    }
-    
-    return result;
+  // определение месяца и дня Пасхи
+  int month = (f > 9) ? 4 : 3;
+  int day = 22 + f;
+
+  // коррекция даты, если она попадает на апрель и больше 30
+  if (month == 4 && day > 30) {
+    month = 5;
+    day -= 30;
+  }
+
+  printf("Пасха в %d году(день месяц): %02d.%02d\n", year, day, month);
 }
 
-/**
- * @brief 2. Реализация функции возведения в степень.
- */
-double customPow(double x, int n) {
-    // y = x^n
-    
-    // Любое число (кроме 0) в степени 0 = 1
-    if (n == 0) {
-        return 1.0;
-    }
+// Функция для возведения в степень
+double power(double x, int n) {
+  double result = 1.0;
 
-    // Обработка 0 в основании
-    if (x == 0.0) {
-        return (n > 0) ? 0.0 : INFINITY; // 0^n = 0; 0^-n = бесконечность
-    }
+  for (int i = 0; i < abs(n); ++i) {
+    result *= x;
+  }
 
-    double result = 1.0;
-    int abs_n = n;
-    
-    // Если степень отрицательная, берем модуль
-    if (n < 0) {
-        abs_n = -n;
-    }
-
-    // Вычисляем x^|n| с помощью цикла
-    for (int i = 0; i < abs_n; ++i) {
-        result *= x;
-    }
-
-    // Если степень была отрицательной, возвращаем 1 / (x^|n|)
-    if (n < 0) {
-        return 1.0 / result;
-    }
-    
-    // Иначе просто возвращаем результат
+  if (n < 0) {
+    return 1.0 / result;
+  } else {
     return result;
+  }
 }
 
-/**
- * @brief 3. Реализация вычисления cos(x) через ряд Тейлора.
- */
-double taylorCos(double x) {
-    const double EPS = 0.0001;
-    
-    // cos(x) = 1 - x^2/2! + x^4/4! - x^6/6! + ...
-    // cos(x) = sum [ ((-1)^k * x^(2k)) / (2k)! ] for k = 0 to inf
+// Функция для вычисления косинуса с использованием ряда Тейлора
+double calculateCosinus(double x, double eps) {
+  double result = 1.0;
+  double term = 1.0;
+  int n = 1;
 
-    // Приведем x к диапазону [-2*PI, 2*PI] для лучшей сходимости
-    x = std::fmod(x, 2 * M_PI);
+  while (fabs(term) >= eps) {
+    term *= -x * x / (2 * n * (2 * n - 1));
+    result += term;
+    n++;
+  }
 
-    double sum = 1.0;    // Сумма ряда (начинаем с k=0, где член = 1)
-    double term = 1.0;   // Текущий член ряда (k=0)
-    int k = 0;
+  return result;
+}
 
-    // Мы вычисляем следующий член на основе предыдущего:
-    // term_k+1 = term_k * (-1) * x*x / ((2k+1) * (2k+2))
-    
-    while (std::fabs(term) > EPS) {
-        k++;
-        // Вычисляем следующий член
-        term = term * (-1) * x * x / ((2 * k - 1) * (2 * k));
-        // Добавляем к сумме
-        sum = sum + term;
-    }
-    
-    return sum;
+int main() {
+  int year = 2022;
+  calculateEasterDate(year);
+
+  double base = 2.0;
+  int exponent = -3;
+  printf("%lf^%d = %lf\n", base, exponent, power(base, exponent));
+
+  double angle = 0.5;
+  double eps = 0.0001;
+  printf("cos(%lf) = %lf\n", angle, calculateCosinus(angle, eps));
+  printf("cos(%lf) = %lf\n", angle, cos(angle));
+
+  return 0;
 }
