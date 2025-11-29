@@ -1,7 +1,5 @@
 #ifndef LAB1_HPP
-#define LAB1_HPP
-#include <vector>
-#include <string>
+#define LAB1_HP
 
 /*1 lab*/
 void DateEaster();
