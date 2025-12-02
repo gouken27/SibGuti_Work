@@ -5,19 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Тесты</title>
     <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 20px; 
-            background-color: #0d1117; 
-            color: white; 
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #0d1117;
+            color: white;
         }
-        select { 
-            border-radius: 10px; 
-            padding: 5px; 
-            background-color: #21262d; 
-            color: white; 
-            border: 1px solid #30363d; 
+        select {
+            border-radius: 10px;
+            padding: 5px;
+            background-color: #21262d;
+            color: white;
+            border: 1px solid #30363d;
             margin-bottom: 10px;
+        }
+        .question {
+            background-color: #272c33;
+            border-radius: 15px;
+            border: 2px solid #4a90e2;
+            padding: 5px;
+            width: auto;
+            height: auto;
+        }
+        pre {
+            background-color: #101316;
+            border-radius: 15px;
+            border: 2px solid #4ae257;
+            display: inline-block;
+            padding: 5px;
+            width: auto;
+            height: auto;
         }
         .selector-container { display: none; }
         .test-container { display: none; }
@@ -26,12 +43,12 @@
         .result { display: none; color: #4dff4d; }
         .correct label { color: #4dff4d; }
         .incorrect label { color: #ff4d4d; }
-        button { 
-            background-color: #21262d; 
-            color: white; 
-            border: 1px solid #30363d; 
-            border-radius: 5px; 
-            padding: 8px 16px; 
+        button {
+            background-color: #21262d;
+            color: white;
+            border: 1px solid #30363d;
+            border-radius: 5px;
+            padding: 8px 16px;
         }
         button:hover { background-color: #30363d; }
     </style>
@@ -216,354 +233,404 @@
         <h2>СиАОД 2 семестр - Псевдокоды</h2>
         <form id="siaod2_pseudocode-form">
             <div class="question">
-                <p>Что это за  метод ?</p>
-                <div class="code">
-                    &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                </div>
+                <p>1)Что это за  метод ?</p>
+                <pre><code>
+DO ( i := 1, 2, ... n-1)
+    k := i
+    DO  ( j := i+1, i+2,… ,n )
+            IF ( a_j < a_k )  k := j   FI     
+        OD
+        a_i <--> a_k 
+OD
+                </code></pre><br>
                 <label><input type="radio" name="q1" value="1"> BubbleSort</label><br>
                 <label><input type="radio" name="q1" value="2"> Добавление в стек</label><br>
                 <label><input type="radio" name="q1" value="3"> SelectSort</label><br>
                 <label><input type="radio" name="q1" value="4"> Построение пирамиды</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
-                <label><input type="radio" name="q2" value="1"> добавления элемента по адресу р в стек</label><br>
-                <label><input type="radio" name="q2" value="2"> добавления элемента по адресу р в очередь</label><br>
-                <label><input type="radio" name="q2" value="3"> удаления элемента по адресу р из списка</label><br>
-                <label><input type="radio" name="q2" value="4"> добавления элемента по адресу р в очередь</label>
+                <p>2)Что это за  метод ?</p>
+                <pre><code>
+DO (i := 1, 2, ... n-1)
+       DO (j := n, n-1, ... i+1)
+              IF (a_j < a_j-1)  a_j↔a_j-1  FI
+       OD
+OD
+                </code></pre><br>
+                <label><input type="radio" name="q2" value="1"> BubbleSort</label><br>
+                <label><input type="radio" name="q2" value="2">QuickSort</label><br>
+                <label><input type="radio" name="q2" value="3"> Построение индексного массива</label><br>
+                <label><input type="radio" name="q2" value="4"> Добавление в список</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
-                <label><input type="radio" name="q3" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q3" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q3" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q3" value="4"> из очереди Q в список List</label>
+                <p>3)Что это за  метод ?</p>
+                <pre><code>
+L := 1, R := n, k := n,
+DO
+	DO ( j := R, R-1, ... L+1)
+		IF (aj < aj-1)  aj↔aj-1,  k := j  FI
+	OD
+	L := k
+	DO ( j := L, L+1, ... R-1)
+		IF (aj > aj+1)  aj↔aj+1,  k := j  FI
+	OD
+	R := k
+OD (L < R)
+                </code></pre><br>
+                <label><input type="radio" name="q3" value="1"> Двоичный поиск2</label><br>
+                <label><input type="radio" name="q3" value="2"> ShakerSort</label><br>
+                <label><input type="radio" name="q3" value="3"> Двоичный поиск1</label><br>
+                <label><input type="radio" name="q3" value="4"> Структура для DigitalSort</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
-                <label><input type="radio" name="q4" value="1"> добавление элемента по адресу p в стек</label><br>
-                <label><input type="radio" name="q4" value="2"> добавление элемента по адресу p в очередь</label><br>
-                <label><input type="radio" name="q4" value="3"> удаление элемента по адресу p из списка</label><br>
-                <label><input type="radio" name="q4" value="4"> удаление элемента по адресу p из списка</label>
+                <p>4)Что это за  метод ?</p>
+                <pre><code>
+DO ( i := 2, 3, …, n )
+	t := ai,  j := i -1
+	DO ( j > 0  и  t < aj )
+		aj+1 := aj
+		j := j -1
+	OD
+	aj+1 := t
+OD
+                </code></pre><br>
+                <label><input type="radio" name="q4" value="1"> Перенос стка в очередь</label><br>
+                <label><input type="radio" name="q4" value="2"> Выделение памяти</label><br>
+                <label><input type="radio" name="q4" value="3"> InsertSort</label><br>
+                <label><input type="radio" name="q4" value="4"> Двоичный поиск1</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
-                <label><input type="radio" name="q5" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q5" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q5" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q5" value="4"> из очереди Q в список List</label>
+                <p>5)Что это за  метод ?</p>
+                <pre><code>
+DO ( k := hm, hm-1, … 1 )
+	DO ( i := k+1, k+2, … n )
+		t := ai,  j := i - k
+		DO ( j > 0  и  t < aj )
+			aj+k := aj
+			j := j - k
+		OD
+		aj+k := t
+	OD
+OD
+                </code></pre><br>
+                <label><input type="radio" name="q5" value="1"> SelectSort</label><br>
+                <label><input type="radio" name="q5" value="2"> ShakerSort</label><br>
+                <label><input type="radio" name="q5" value="3"> MergeSort</label><br>
+                <label><input type="radio" name="q5" value="4"> ShellSort</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
+                <p>6)Что это за  метод ?</p>
+                <pre><code>
+L: = 1,  R: = n,  Найден: = нет
+  DO ( L ≤ R ) 
+    m: =  ⌊(L+R)/2⌋		
+    IF (am=X)  Найден: =да  OD  FI
+    IF (am < X)   L: = m+1
+    ELSE  R: = m-1 
+    FI
+OD
+                </code></pre><br>
                 <label><input type="radio" name="q6" value="1"> BubbleSort</label><br>
-                <label><input type="radio" name="q6" value="2"> Добавление в стек</label><br>
+                <label><input type="radio" name="q6" value="2"> BinarySearch 1</label><br>
                 <label><input type="radio" name="q6" value="3"> SelectSort</label><br>
-                <label><input type="radio" name="q6" value="4"> Построение пирамиды</label>
+                <label><input type="radio" name="q6" value="4"> Двоичный поиск 2</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
-                <label><input type="radio" name="q7" value="1"> добавления элемента по адресу р в стек</label><br>
-                <label><input type="radio" name="q7" value="2"> добавления элемента по адресу р в очередь</label><br>
-                <label><input type="radio" name="q7" value="3"> удаления элемента по адресу р из списка</label><br>
-                <label><input type="radio" name="q7" value="4"> добавления элемента по адресу р в очередь</label>
+                <p>7)Что это за  метод ?</p>
+                <pre><code>
+L := 1, R := n  
+DO (L < R)  
+	m := ⌊(L + R)/2⌋  
+	IF (am < X) L := m + 1  
+	ELSE R := m  
+	FI  
+OD  
+IF (a_R = X) Найден := да  
+ELSE Найден := нет  
+FI
+                </code></pre><br>
+                <label><input type="radio" name="q7" value="1"> DigitalSort</label><br>
+                <label><input type="radio" name="q7" value="2"> Двоичный поиск 2</label><br>
+                <label><input type="radio" name="q7" value="3"> BinarySearch 1</label><br>
+                <label><input type="radio" name="q7" value="4"> Построение пирамиды</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
-                <label><input type="radio" name="q8" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q8" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q8" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q8" value="4"> из очереди Q в список List</label>
+                <p>8)Что это за  метод ?</p>
+                <pre><code>
+B := (1, 2, …, n)
+DO (i = 1, 2, …, n-1)
+	DO (j = n, n-1, …, i+1)
+		IF (a[bj] < a[bj-1]) bj ↔ bj-1 FI
+	OD
+OD
+                </code></pre><br>
+                <label><input type="radio" name="q8" value="1"> ArrayStruct</label><br>
+                <label><input type="radio" name="q8" value="2"> Размещение списка</label><br>
+                <label><input type="radio" name="q8" value="3"> Поиск в хеше</label><br>
+                <label><input type="radio" name="q8" value="4"> Добавление в стек</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
-                <label><input type="radio" name="q9" value="1"> добавление элемента по адресу p в стек</label><br>
-                <label><input type="radio" name="q9" value="2"> добавление элемента по адресу p в очередь</label><br>
-                <label><input type="radio" name="q9" value="3"> удаление элемента по адресу p из списка</label><br>
-                <label><input type="radio" name="q9" value="4"> удаление элемента по адресу p из списка</label>
+                <p>9)Что это за  метод ?</p>
+                <pre><code>
+x := aL, i := L
+DO
+	j := 2i
+	IF (j > R) OD FI
+	IF (j < R и aj+1 ≤ aj) j := j+1 FI
+	IF (x ≤ aj) OD FI
+	ai := aj
+	i := j
+OD
+ai := x
+                </code></pre><br>
+                <label><input type="radio" name="q9" value="1"> Рекурсивная печать списка</label><br>
+                <label><input type="radio" name="q9" value="2"> Оптимизированая постановка в очередь</label><br>
+                <label><input type="radio" name="q9" value="3"> DigitalMerge</label><br>
+                <label><input type="radio" name="q9" value="4"> Построение пирамиды</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
-                <label><input type="radio" name="q10" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q10" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q10" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q10" value="4"> из очереди Q в список List</label>
+                <p>10)Что это за  метод ?</p>
+                <pre><code>
+L := ⌊n/2⌋
+DO (L > 0)
+	Построение пирамиды (L, n)
+	L := L-1
+OD
+
+R := n
+DO (R > 1)
+	a1 ↔ aR
+	R := R-1
+	Построение пирамиды (1, R)
+OD
+                </code></pre><br>
+                <label><input type="radio" name="q10" value="1"> Выделение Sort</label><br>
+                <label><input type="radio" name="q10" value="2"> HeapSort</label><br>
+                <label><input type="radio" name="q10" value="3"> Insert Sort 2</label><br>
+                <label><input type="radio" name="q10" value="4"> Merge Sort</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
+                <p>11)Что это за  метод ?</p>
+                <pre><code>
+
+                </code></pre><br>
                 <label><input type="radio" name="q11" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q11" value="2"> из очереди Tail в список Next</label><br>
                 <label><input type="radio" name="q11" value="3"> из списка List в очередь Q</label><br>
                 <label><input type="radio" name="q11" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
+                <p>Что это за  метод ?</p>
+                <pre><code>
+
+                </code></pre><br>
                 <label><input type="radio" name="q12" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q12" value="2"> из очереди Tail в список Next</label><br>
                 <label><input type="radio" name="q12" value="3"> из списка List в очередь Q</label><br>
                 <label><input type="radio" name="q12" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
+                <p>12)Что это за  метод ?</p>
+                <pre><code>
+
+                </code></pre><br>
                 <label><input type="radio" name="q13" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q13" value="2"> из очереди Tail в список Next</label><br>
                 <label><input type="radio" name="q13" value="3"> из списка List в очередь Q</label><br>
                 <label><input type="radio" name="q13" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
+                <p>13)Что это за  метод ?</p>
+                <pre><code>
+
+                </code></pre><br>
                 <label><input type="radio" name="q14" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q14" value="2"> из очереди Tail в список Next</label><br>
                 <label><input type="radio" name="q14" value="3"> из списка List в очередь Q</label><br>
                 <label><input type="radio" name="q14" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
+                <p>14)Что это за  метод ?</p>
+                <pre><code>
+
+                </code></pre><br>
                 <label><input type="radio" name="q15" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q15" value="2"> из очереди Tail в список Next</label><br>
                 <label><input type="radio" name="q15" value="3"> из списка List в очередь Q</label><br>
                 <label><input type="radio" name="q15" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
+                <p>15)Что это за  метод ?</p>
+                <pre><code>
+
+                </code></pre><br>
                 <label><input type="radio" name="q16" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q16" value="2"> из очереди Tail в список Next</label><br>
                 <label><input type="radio" name="q16" value="3"> из списка List в очередь Q</label><br>
                 <label><input type="radio" name="q16" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
+                <p>16)Что это за  метод ?</p>
+                <pre><code>
+
+                </code></pre><br>
                 <label><input type="radio" name="q17" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q17" value="2"> из очереди Tail в список Next</label><br>
                 <label><input type="radio" name="q17" value="3"> из списка List в очередь Q</label><br>
                 <label><input type="radio" name="q17" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
+                <p>17)Что это за  метод ?</p>
+                <pre><code>
+
+                </code></pre><br>
                 <label><input type="radio" name="q18" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q18" value="2"> из очереди Tail в список Next</label><br>
                 <label><input type="radio" name="q18" value="3"> из списка List в очередь Q</label><br>
                 <label><input type="radio" name="q18" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
+                <p>18)Что это за  метод ?</p>
+                <pre><code>
+
+                </code></pre><br>
                 <label><input type="radio" name="q19" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q19" value="2"> из очереди Tail в список Next</label><br>
                 <label><input type="radio" name="q19" value="3"> из списка List в очередь Q</label><br>
                 <label><input type="radio" name="q19" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
+                <p>19)Что это за  метод ?</p>
+                <pre><code>
+
+                </code></pre><br>
                 <label><input type="radio" name="q20" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q20" value="2"> из очереди Tail в список Next</label><br>
                 <label><input type="radio" name="q20" value="3"> из списка List в очередь Q</label><br>
                 <label><input type="radio" name="q20" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
+                <p>20)Что это за  метод ?</p>
+                <pre><code>
+
+                </code></pre><br>
                 <label><input type="radio" name="q21" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q21" value="2"> из очереди Tail в список Next</label><br>
                 <label><input type="radio" name="q21" value="3"> из списка List в очередь Q</label><br>
                 <label><input type="radio" name="q21" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
+                <p>21)Что это за  метод ?</p>
+                <pre><code>
+
+                </code></pre><br>
                 <label><input type="radio" name="q22" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q22" value="2"> из очереди Tail в список Next</label><br>
                 <label><input type="radio" name="q22" value="3"> из списка List в очередь Q</label><br>
                 <label><input type="radio" name="q22" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
+                <p>22)Что это за  метод ?</p>
+                <pre><code>
+
+                </code></pre><br>
                 <label><input type="radio" name="q23" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q23" value="2"> из очереди Tail в список Next</label><br>
                 <label><input type="radio" name="q23" value="3"> из списка List в очередь Q</label><br>
                 <label><input type="radio" name="q23" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
+                <p>23)Что это за  метод ?</p>
+                <pre><code>
+
+                </code></pre><br>
                 <label><input type="radio" name="q24" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q24" value="2"> из очереди Tail в список Next</label><br>
                 <label><input type="radio" name="q24" value="3"> из списка List в очередь Q</label><br>
                 <label><input type="radio" name="q24" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
+                <p>24)Что это за  метод ?</p>
+                <pre><code>
+
+                </code></pre><br>
                 <label><input type="radio" name="q25" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q25" value="2"> из очереди Tail в список Next</label><br>
                 <label><input type="radio" name="q25" value="3"> из списка List в очередь Q</label><br>
                 <label><input type="radio" name="q25" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
+                <p>25)Что это за  метод ?</p>
+                <pre><code>
+
+                </code></pre><br>
                 <label><input type="radio" name="q26" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q26" value="2"> из очереди Tail в список Next</label><br>
                 <label><input type="radio" name="q26" value="3"> из списка List в очередь Q</label><br>
                 <label><input type="radio" name="q26" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
+                <p>26)Что это за  метод ?</p>
+                <pre><code>
+
+                </code></pre><br>
                 <label><input type="radio" name="q27" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q27" value="2"> из очереди Tail в список Next</label><br>
                 <label><input type="radio" name="q27" value="3"> из списка List в очередь Q</label><br>
                 <label><input type="radio" name="q27" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
+                <p>27)Что это за  метод ?</p>
+                <pre><code>
+
+                </code></pre><br>
                 <label><input type="radio" name="q28" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q28" value="2"> из очереди Tail в список Next</label><br>
                 <label><input type="radio" name="q28" value="3"> из списка List в очередь Q</label><br>
                 <label><input type="radio" name="q28" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?</p>
-                <div class="code">
-                    &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                </div>
+                <p>28)Что это за  метод ?</p>
+                <pre><code>
+
+                </code></pre><br>
                 <label><input type="radio" name="q29" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q29" value="2"> из очереди Tail в список Next</label><br>
                 <label><input type="radio" name="q29" value="3"> из списка List в очередь Q</label><br>
                 <label><input type="radio" name="q29" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
+                <p>29)Что это за  метод ?</p>
+                <pre><code>
+
+                </code></pre><br>
                 <label><input type="radio" name="q30" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q30" value="2"> из очереди Tail в список Next</label><br>
                 <label><input type="radio" name="q30" value="3"> из списка List в очередь Q</label><br>
                 <label><input type="radio" name="q30" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
+                <p>30)Что это за  метод ?</p>
+                <pre><code>
+
+                </code></pre><br>
                 <label><input type="radio" name="q31" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q31" value="2"> из очереди Tail в список Next</label><br>
+                <label><input type="radio" name="q31" value="2"> Рекурсивнаая печать списка</label><br>
                 <label><input type="radio" name="q31" value="3"> из списка List в очередь Q</label><br>
                 <label><input type="radio" name="q31" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?
-                    <div class="code">
-                        &lt;p&gt;Пример текста внутри блока&lt;/p&gt;
-                    </div>
-                </p>
+                <p>31)Что это за  метод ?</p>
+                <pre><code>
+<Выделение памяти по адресу>
+P -> data = <данные>
+P -> next = head
+head = p
+                </code></pre><br>
                 <label><input type="radio" name="q32" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q32" value="2"> из очереди Tail в список Next</label><br>
                 <label><input type="radio" name="q32" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q32" value="4"> из очереди Q в список List</label>
+                <label><input type="radio" name="q32" value="4"> Добавление в стек</label>
             </div>
             <button type="button" onclick="checkTest('siaod2_pseudocode')">Проверить</button>
             <p id="siaod2_pseudocode-error" class="error">Вы не ответили на все вопросы!</p>
@@ -575,63 +642,63 @@
         <h2>СиАОД 2 семестр - Вариант 1</h2>
         <form id="siaod2_variant1-form">
             <div class="question">
-                <p>Массив - структура данных:</p>
+                <p>1)Массив - структура данных:</p>
                 <label><input type="radio" name="q1" value="1"> с прямым доступом</label><br>
                 <label><input type="radio" name="q1" value="2"> с последовательным доступом</label><br>
                 <label><input type="radio" name="q1" value="3"> с косвенным доступом</label>
             </div>
             <div class="question">
-                <p>Прямой порядок сортировки</p>
+                <p>2)Прямой порядок сортировки</p>
                 <label><input type="radio" name="q2" value="1"> по возрастанию</label><br>
                 <label><input type="radio" name="q2" value="2"> по убыванию</label><br>
                 <label><input type="radio" name="q2" value="3"> по невозрастанию</label><br>
                 <label><input type="radio" name="q2" value="4"> по неубыванию</label>
             </div>
             <div class="question">
-                <p>Для определения трудоемкости сортировки пользуются</p>
+                <p>3)Для определения трудоемкости сортировки пользуются</p>
                 <label><input type="radio" name="q3" value="1"> асимптотической оценкой времени работы</label><br>
                 <label><input type="radio" name="q3" value="2"> динамической оценкой времени работы</label><br>
                 <label><input type="radio" name="q3" value="3"> аксиоматической оценкой времени работы</label>
             </div>
             <div class="question">
-                <p>Список относится</p>
+                <p>4)Список относится</p>
                 <label><input type="radio" name="q4" value="1"> к статическим данным</label><br>
                 <label><input type="radio" name="q4" value="2"> к адаптивным данным</label><br>
                 <label><input type="radio" name="q4" value="3"> к динамическим данным</label>
             </div>
             <div class="question">
-                <p>Вначале числа из списка S распределяются по очередям, причём номер очереди определяется последней цифрой каждого числа. Затем полученные очереди соединяются в список, для которого все действия повторяются, но распределение по очередям производится в соответствии со следующей цифрой и т.д. переместится на второе место, и т.д. Это алгоритм</p>
+                <p>5)Вначале числа из списка S распределяются по очередям, причём номер очереди определяется последней цифрой каждого числа. Затем полученные очереди соединяются в список, для которого все действия повторяются, но распределение по очередям производится в соответствии со следующей цифрой и т.д. переместится на второе место, и т.д. Это алгоритм</p>
                 <label><input type="radio" name="q5" value="1"> метода прямого включения</label><br>
                 <label><input type="radio" name="q5" value="2"> метода цифровой сортировки</label><br>
                 <label><input type="radio" name="q5" value="3"> метода прямого слияния</label>
             </div>
             <div class="question">
-                <p>Предварительно упорядочим элементы массива помощью к сортировок, а затем отсортируем массив методом прямого включения. Это алгоритм метода</p>
+                <p>6)Предварительно упорядочим элементы массива помощью к - сортировок, а затем отсортируем массив методом прямого включения. Это алгоритм метода</p>
                 <label><input type="radio" name="q6" value="1"> Шелла</label><br>
                 <label><input type="radio" name="q6" value="2"> Хоара</label><br>
                 <label><input type="radio" name="q6" value="3"> Вильямса-Флойда</label>
             </div>
             <div class="question">
-                <p>Метод Хоара для случайного массива спи элементами пр по имеет трудоемкость порядка</p>
+                <p>7)Метод Хоара для случайного массива с n элементами при "n -> бесконечности" имеет трудоемкость порядка</p>
                 <label><input type="radio" name="q7" value="1"> log n</label><br>
                 <label><input type="radio" name="q7" value="2"> n^2</label><br>
                 <label><input type="radio" name="q7" value="3"> n log n</label>
             </div>
             <div class="question">
-                <p>Очередь реализует дисциплину обслуживания</p>
+                <p>8)Очередь реализует дисциплину обслуживания</p>
                 <label><input type="radio" name="q8" value="1"> LIFO</label><br>
                 <label><input type="radio" name="q8" value="2"> FIFO</label><br>
                 <label><input type="radio" name="q8" value="3"> FULO</label><br>
                 <label><input type="radio" name="q8" value="4"> LULO</label>
             </div>
             <div class="question">
-                <p>К методам сортировки последовательностей относится</p>
+                <p>9)К методам сортировки последовательностей относится</p>
                 <label><input type="radio" name="q9" value="1"> метод прямого слияния</label><br>
                 <label><input type="radio" name="q9" value="2"> метод прямого включения</label><br>
                 <label><input type="radio" name="q9" value="3"> цифровая сортировка</label>
             </div>
             <div class="question">
-                <p>Двоичный поиск при количестве элементов по имее трудоемкость порядка</p>
+                <p>10)Двоичный поиск при количестве элементов "n -> бесконечности"  имеет трудоемкость порядка</p>
                 <label><input type="radio" name="q10" value="1"> n log n</label><br>
                 <label><input type="radio" name="q10" value="2"> n</label><br>
                 <label><input type="radio" name="q10" value="3"> log n</label>
@@ -646,63 +713,63 @@
         <h2>СиАОД 2 семестр - Вариант 2</h2>
         <form id="siaod2_variant2-form">
             <div class="question">
-                <p>Запись - структура данных</p>
+                <p>1)Запись - структура данных</p>
                 <label><input type="radio" name="q1" value="1"> с прямым доступом</label><br>
                 <label><input type="radio" name="q1" value="2"> с последовательным доступом</label><br>
                 <label><input type="radio" name="q1" value="3"> с косвенным доступом</label>
             </div>
             <div class="question">
-                <p>В массиве, отсортированном прямом порядке, количество серий равно</p>
+                <p>2)В массиве, отсортированном прямом порядке, количество серий равно</p>
                 <label><input type="radio" name="q2" value="1"> единице</label><br>
                 <label><input type="radio" name="q2" value="2"> нулю</label><br>
                 <label><input type="radio" name="q2" value="3"> количеству элементов в массиве</label>
             </div>
             <div class="question">
-                <p>Дерево относится</p>
+                <p>3))Дерево относится</p>
                 <label><input type="radio" name="q3" value="1"> к статическим данным</label><br>
                 <label><input type="radio" name="q3" value="2"> к динамическим данным</label><br>
                 <label><input type="radio" name="q3" value="3"> к адаптивным данным</label>
             </div>
             <div class="question">
-                <p>При оценке эффективности сортировки учитывают операции</p>
+                <p>4)При оценке эффективности сортировки учитывают операции</p>
                 <label><input type="radio" name="q4" value="1"> сравнения элементов</label><br>
                 <label><input type="radio" name="q4" value="2"> пересылки элементов</label><br>
                 <label><input type="radio" name="q4" value="3"> размещения элементов</label><br>
                 <label><input type="radio" name="q4" value="4"> чтения элементов</label>
             </div>
             <div class="question">
-                <p>Начиная со второго элемента, берём очередной і-й элемент массива и включаем его на нужное место среди первых (1-1) элементов, при этом все элементы, которые больше і-того, сдвигаются на одну позицию вправо, и т.д. Это алгоритм сортировки методом</p>
+                <p>5)Начиная со второго элемента, берём очередной і-й элемент массива и включаем его на нужное место среди первых (1-1) элементов, при этом все элементы, которые больше і-того, сдвигаются на одну позицию вправо, и т.д. Это алгоритм сортировки методом</p>
                 <label><input type="radio" name="q5" value="1"> прямого выбора</label><br>
                 <label><input type="radio" name="q5" value="2"> прямого включения</label><br>
                 <label><input type="radio" name="q5" value="3"> прямого слияния</label><br>
                 <label><input type="radio" name="q5" value="4"> прямого сдвига</label>
             </div>
             <div class="question">
-                <p>Трудоемкость метода прямого включения</p>
+                <p>6)Трудоемкость метода прямого включения</p>
                 <label><input type="radio" name="q6" value="1"> зависит от исходной упорядоченности массива</label><br>
                 <label><input type="radio" name="q6" value="2"> не зависит от исходной упорядоченности массива</label><br>
                 <label><input type="radio" name="q6" value="3"> сильно зависит от исходной упорядоченности массива</label>
             </div>
             <div class="question">
-                <p>Предварительно упорядочим элементы массива C помощью к сортировок, а затем отсортируем массив методом прямого включения. Это алгоритм метода</p>
+                <p>7)Предварительно упорядочим элементы массива C помощью к сортировок, а затем отсортируем массив методом прямого включения. Это алгоритм метода</p>
                 <label><input type="radio" name="q7" value="1"> Шелла</label><br>
                 <label><input type="radio" name="q7" value="2"> Хоара</label><br>
                 <label><input type="radio" name="q7" value="3"> Вильямса-Флойда</label>
             </div>
             <div class="question">
-                <p>Очередь структура данных</p>
+                <p>8)Очередь структура данных</p>
                 <label><input type="radio" name="q8" value="1"> с прямым доступом</label><br>
                 <label><input type="radio" name="q8" value="2"> с последовательным доступом</label><br>
                 <label><input type="radio" name="q8" value="3"> с косвенным доступом</label>
             </div>
             <div class="question">
-                <p>Метод прямого слияния при количестве элементов по имеет трудоемкость порядка</p>
+                <p>9)Метод прямого слияния при количестве элементов по имеет трудоемкость порядка</p>
                 <label><input type="radio" name="q9" value="1"> n log n</label><br>
                 <label><input type="radio" name="q9" value="2"> n²</label><br>
                 <label><input type="radio" name="q9" value="3"> log n</label>
             </div>
             <div class="question">
-                <p>В массиве (1, 3, 3, 4, 5, 6, 7, 7) элемент 7 можно найти</p>
+                <p>10)В массиве (1, 3, 3, 4, 5, 6, 7, 7) элемент 7 можно найти</p>
                 <label><input type="radio" name="q10" value="1"> за 2 шага алгоритма</label><br>
                 <label><input type="radio" name="q10" value="2"> за 3 шага алгоритма</label><br>
                 <label><input type="radio" name="q10" value="3"> за 8 шагов алгоритма</label>
@@ -1407,61 +1474,61 @@
         <h2>СиАОД 2 семестр - Вариант 13</h2>
         <form id="siaod2_variant13-form">
             <div class="question">
-                <p></p>
-                <label><input type="radio" name="q1" value="1"></label><br>
-                <label><input type="radio" name="q1" value="2"></label><br>
-                <label><input type="radio" name="q1" value="3"></label>
+                <p>1)Массив относится</p>
+                <label><input type="radio" name="q1" value="1"> к простым типам данных</label><br>
+                <label><input type="radio" name="q1" value="2"> к составным типам данным</label><br>
+                <label><input type="radio" name="q1" value="3"> к конструктивным типам данным</label>
             </div>
             <div class="question">
-                <p></p>
+                <p>2)Прямой порядок сортировки</p>
                 <label><input type="radio" name="q2" value="1"></label><br>
                 <label><input type="radio" name="q2" value="2"></label><br>
                 <label><input type="radio" name="q2" value="3"></label>
             </div>
             <div class="question">
-                <p></p>
+                <p>3)Расположите функции в порядке доминирования</p>
                 <label><input type="radio" name="q3" value="1"></label><br>
                 <label><input type="radio" name="q3" value="2"></label><br>
                 <label><input type="radio" name="q3" value="3"></label>
             </div>
             <div class="question">
-                <p></p>
+                <p>4)Для алгоритмов сортировки, использующих операции сравнения, наименьший порядок трудоемкости (при количестве элементов n → ∞) оценивается величиной</p>
                 <label><input type="radio" name="q4" value="1"></label><br>
                 <label><input type="radio" name="q4" value="2"></label><br>
                 <label><input type="radio" name="q4" value="3"></label>
             </div>
             <div class="question">
-                <p></p>
+                <p>5)Трудоемкость метода прямого выбора</p>
                 <label><input type="radio" name="q5" value="1"></label><br>
                 <label><input type="radio" name="q5" value="2"></label><br>
                 <label><input type="radio" name="q5" value="3"></label>
             </div>
             <div class="question">
-                <p></p>
+                <p>6)Метод прямого включения при количестве элементов n→∞ имеет трудоемкость порядка</p>
                 <label><input type="radio" name="q6" value="1"></label><br>
                 <label><input type="radio" name="q6" value="2"></label><br>
                 <label><input type="radio" name="q6" value="3"></label>
             </div>
             <div class="question">
-                <p></p>
+                <p>7)Сортировка методом Хоара</p>
                 <label><input type="radio" name="q7" value="1"></label><br>
                 <label><input type="radio" name="q7" value="2"></label><br>
                 <label><input type="radio" name="q7" value="3"></label>
             </div>
             <div class="question">
-                <p></p>
+                <p>8)Список – структура данны</p>
                 <label><input type="radio" name="q8" value="1"></label><br>
                 <label><input type="radio" name="q8" value="2"></label><br>
                 <label><input type="radio" name="q8" value="3"></label>
             </div>
             <div class="question">
-                <p></p>
+                <p>9)Фрагмент кода реализуе</p>
                 <label><input type="radio" name="q9" value="1"></label><br>
                 <label><input type="radio" name="q9" value="2"></label><br>
                 <label><input type="radio" name="q9" value="3"></label>
             </div>
             <div class="question">
-                <p></p>
+                <p>10)Для неупорядоченного массива можно применить</p>
                 <label><input type="radio" name="q10" value="1"></label><br>
                 <label><input type="radio" name="q10" value="2"></label><br>
                 <label><input type="radio" name="q10" value="3"></label>
@@ -1890,61 +1957,61 @@
         <h2>СиАОД 2 семестр - Вариант 20</h2>
         <form id="siaod2_variant20-form">
             <div class="question">
-                <p></p>
+                <p>1)</p>
                 <label><input type="radio" name="q1" value="1"></label><br>
                 <label><input type="radio" name="q1" value="2"></label><br>
                 <label><input type="radio" name="q1" value="3"></label>
             </div>
             <div class="question">
-                <p></p>
+                <p>2)</p>
                 <label><input type="radio" name="q2" value="1"></label><br>
                 <label><input type="radio" name="q2" value="2"></label><br>
                 <label><input type="radio" name="q2" value="3"></label>
             </div>
             <div class="question">
-                <p></p>
+                <p>3)</p>
                 <label><input type="radio" name="q3" value="1"></label><br>
                 <label><input type="radio" name="q3" value="2"></label><br>
                 <label><input type="radio" name="q3" value="3"></label>
             </div>
             <div class="question">
-                <p></p>
+                <p>4)</p>
                 <label><input type="radio" name="q4" value="1"></label><br>
                 <label><input type="radio" name="q4" value="2"></label><br>
                 <label><input type="radio" name="q4" value="3"></label>
             </div>
             <div class="question">
-                <p></p>
+                <p>5)</p>
                 <label><input type="radio" name="q5" value="1"></label><br>
                 <label><input type="radio" name="q5" value="2"></label><br>
                 <label><input type="radio" name="q5" value="3"></label>
             </div>
             <div class="question">
-                <p></p>
+                <p>6)</p>
                 <label><input type="radio" name="q6" value="1"></label><br>
                 <label><input type="radio" name="q6" value="2"></label><br>
                 <label><input type="radio" name="q6" value="3"></label>
             </div>
             <div class="question">
-                <p></p>
+                <p>7)</p>
                 <label><input type="radio" name="q7" value="1"></label><br>
                 <label><input type="radio" name="q7" value="2"></label><br>
                 <label><input type="radio" name="q7" value="3"></label>
             </div>
             <div class="question">
-                <p></p>
+                <p>8)</p>
                 <label><input type="radio" name="q8" value="1"></label><br>
                 <label><input type="radio" name="q8" value="2"></label><br>
                 <label><input type="radio" name="q8" value="3"></label>
             </div>
             <div class="question">
-                <p></p>
+                <p>9)</p>
                 <label><input type="radio" name="q9" value="1"></label><br>
                 <label><input type="radio" name="q9" value="2"></label><br>
                 <label><input type="radio" name="q9" value="3"></label>
             </div>
             <div class="question">
-                <p></p>
+                <p>10)</p>
                 <label><input type="radio" name="q10" value="1"></label><br>
                 <label><input type="radio" name="q10" value="2"></label><br>
                 <label><input type="radio" name="q10" value="3"></label>
@@ -7496,17 +7563,17 @@
         // Объект с тестами
     const tests = {
         siaod2_pseudocode: { 
-            answers: {q1: '', q2: '', q3: '', q4: '', q5: '', q6: '', q7: '', q8: '', q9: '', q10: '',
+            answers: {q1: '3', q2: '1', q3: '2', q4: '', q5: '', q6: '', q7: '', q8: '', q9: '', q10: '',
             q11: '', q12: '', q13: '', q14: '', q15: '', q16: '', q17: '', q18: '', q19: '', q20: '',
             q21: '', q22: '', q23: '', q24: '', q25: '', q26: '', q27: '', q28: '', q29: '', q30: '', q31: '', q32: ''}, 
             questions: 32
         },
         siaod2_variant1: { 
-            answers: { q1: '1', q2: '1', q3: '1', q4: '3', q5: '2', q6: '1', q7: '3', q8: '2', q9: '1', q10: '3' }, 
+            answers: { q1: '1', q2: '1', q3: '1', q4: '3', q5: '2', q6: '1', q7: '3', q8: '2', q9:'2', q10: '3' }, 
             questions: 10 
         },
         siaod2_variant2: { 
-            answers: { q1: '1', q2: '1', q3: '2', q4: '1', q5: '2', q6: '1', q7: '1', q8: '2', q9: '1', q10: '2' }, 
+            answers: { q1: '1', q2: '1', q3: ['1','2'], q4: '2', q5: '2', q6: '3', q7: '1', q8: '2', q9: '1', q10: '2' }, 
             questions: 10 
         },
         siaod2_variant3: { 
@@ -7518,11 +7585,11 @@
             questions: 10 
         },
         siaod2_variant5: { 
-            answers: {q1: '', q2: '', q3: '', q4: '', q5: '', q6: '', q7: '', q8: '', q9: '', q10: ''},
+            answers: {q1: '3', q2: '1', q3: '1', q4: '2', q5: '2', q6: '2', q7: '3', q8: '2', q9: '2', q10: '1'},
             questions: 10 
         },
         siaod2_variant6: { 
-            answers: {q1: '', q2: '', q3: '', q4: '', q5: '', q6: '', q7: '', q8: '', q9: '', q10: ''},
+            answers: {q1: '2', q2: '1', q3: ['1','2'], q4:['1','3'], q5: '2', q6: '3', q7: '2', q8: '1', q9: '1', q10: '3'},
             questions: 10 
         },
         siaod2_variant7: { 
@@ -7530,7 +7597,7 @@
             questions: 10 
         },
         siaod2_variant8: { 
-            answers: {q1: '', q2: '', q3: '', q4: '', q5: '', q6: '', q7: '', q8: '', q9: '', q10: ''},
+            answers: {q1: '2', q2: '2', q3: '1', q4: '2', q5: '2', q6: '2', q7: '2', q8: '2', q9: '1', q10: '3'},
             questions: 10 
         },
         siaod2_variant9: { 
@@ -7538,11 +7605,11 @@
             questions: 10 
         },
         siaod2_variant10: { 
-            answers: {q1: '', q2: '', q3: '', q4: '', q5: '', q6: '', q7: '', q8: '', q9: '', q10: ''},
+            answers: {q1: '2', q2: '3', q3: '1', q4: ['1','3'], q5: '1', q6: '3', q7: '2', q8: ['1','3'], q9: '2', q10: '1'},
             questions: 10 
         },
         siaod2_variant11: { 
-            answers: {q1: '', q2: '', q3: '', q4: '', q5: '', q6: '', q7: '', q8: '', q9: '', q10: ''},
+            answers: {q1: '1', q2: ['1','3'], q3: '2', q4: '3', q5: '1', q6: '3', q7: '3', q8: '3', q9: '1', q10: '1'},
             questions: 10 
         },
         siaod2_variant12: { 
@@ -7550,7 +7617,7 @@
             questions: 10 
         },
         siaod2_variant13: { 
-            answers: {q1: '', q2: '', q3: '', q4: '', q5: '', q6: '', q7: '', q8: '', q9: '', q10: ''},
+            answers: {q1: '2', q2: '1', q3: '1', q4: '3', q5: '2', q6: '3', q7: '2', q8: '2', q9: '3', q10: '2'},
             questions: 10 
         },
         siaod2_variant14: { 
@@ -7558,15 +7625,15 @@
             questions: 10 
         },
         siaod2_variant15: { 
-            answers: {q1: '', q2: '', q3: '', q4: '', q5: '', q6: '', q7: '', q8: '', q9: '', q10: ''},
+            answers: {q1: '3', q2: '2', q3: ['1','2'], q4: ['1','3'], q5: '1', q6: '3', q7: '3', q8: '1', q9: '3', q10: '2'},
             questions: 10 
         },
         siaod2_variant16: { 
-            answers: {q1: '', q2: '', q3: '', q4: '', q5: '', q6: '', q7: '', q8: '', q9: '', q10: ''},
+            answers: {q1: '2', q2: '2', q3: '1', q4: '2', q5: '1', q6: '1', q7: '2', q8: '2', q9: '2', q10: '2'},
             questions: 10 
         },
         siaod2_variant17: { 
-            answers: {q1: '', q2: '', q3: '', q4: '', q5: '', q6: '', q7: '', q8: '', q9: '', q10: ''},
+            answers: {q1: '1', q2: '2', q3: '2', q4: '3', q5: '1', q6: '2', q7: '2', q8: '1', q9: '2', q10: '3'},
             questions: 10 
         },
         siaod2_variant18: { 
@@ -7578,7 +7645,7 @@
             questions: 10 
         },
         siaod2_variant20: { 
-            answers: {q1: '', q2: '', q3: '', q4: '', q5: '', q6: '', q7: '', q8: '', q9: '', q10: ''},
+            answers: {q1: '2', q2: '2', q3: '1', q4: '2', q5: '2', q6: '3', q7: '3', q8: '1', q9: '3', q10: '1'},
             questions: 10 
         },
         
