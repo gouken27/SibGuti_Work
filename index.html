@@ -396,7 +396,6 @@ DO (L > 0)
 	Построение пирамиды (L, n)
 	L := L-1
 OD
-
 R := n
 DO (R > 1)
 	a1 ↔ aR
@@ -412,7 +411,16 @@ OD
             <div class="question">
                 <p>11)Что это за  метод ?</p>
                 <pre><code>
+L, R — левая и правая границы рабочей части массива
 
+x := a_L, i := L, j := R  
+DO (i ≤ j)  
+    DO (a_i < x) i := i + 1 OD  
+    DO (a_j > x) j := j - 1 OD  
+    IF (i ≤ j | a_i <=> a_j, i := i + 1, j := j - 1 FI  
+OD
+IF (L < j) QuickSort(L, j) FI
+IF (i < R) QuickSort(i, R) FI
                 </code></pre><br>
                 <label><input type="radio" name="q11" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q11" value="2"> из очереди Tail в список Next</label><br>
@@ -422,7 +430,23 @@ OD
             <div class="question">
                 <p>Что это за  метод ?</p>
                 <pre><code>
-
+DO (q ≠ 0 И r ≠ 0)
+    IF (a → Data ≤ b → Data)
+        <Переместить элемент из списка a в очередь c>
+        q := q - 1
+    ELSE
+        <Переместить элемент из списка b в очередь c>
+        r := r - 1
+    FI
+OD
+DO (q > 0)
+    <Переместить элемент из списка a в очередь c>
+    q := q - 1
+OD
+DO (r > 0)
+    <Переместить элемент из списка b в очередь c>
+    r := r - 1
+OD
                 </code></pre><br>
                 <label><input type="radio" name="q12" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q12" value="2"> из очереди Tail в список Next</label><br>
@@ -432,7 +456,15 @@ OD
             <div class="question">
                 <p>12)Что это за  метод ?</p>
                 <pre><code>
-
+i := 0
+DO
+    j := H(k, i)
+    IF (T[j] = NULL)
+        T[j] := k
+        return j
+    FI
+    i := i + 1
+OD (i = m)
                 </code></pre><br>
                 <label><input type="radio" name="q13" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q13" value="2"> из очереди Tail в список Next</label><br>
@@ -442,7 +474,14 @@ OD
             <div class="question">
                 <p>13)Что это за  метод ?</p>
                 <pre><code>
-
+i := 0
+DO
+    j := H(k, i)
+    IF (T[j] = k)
+        return j
+    FI
+    i := i + 1
+OD (T[i] = 0 OR i = m)
                 </code></pre><br>
                 <label><input type="radio" name="q14" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q14" value="2"> из очереди Tail в список Next</label><br>
@@ -452,7 +491,13 @@ OD
             <div class="question">
                 <p>14)Что это за  метод ?</p>
                 <pre><code>
-
+P → Next := NULL
+IF (Head ≠ NULL)
+    Tail→Next := P
+ELSE
+    Head := P
+FI
+Tail := P
                 </code></pre><br>
                 <label><input type="radio" name="q15" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q15" value="2"> из очереди Tail в список Next</label><br>
@@ -462,7 +507,9 @@ OD
             <div class="question">
                 <p>15)Что это за  метод ?</p>
                 <pre><code>
-
+P → Next := NULL
+head := p
+tail := p
                 </code></pre><br>
                 <label><input type="radio" name="q16" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q16" value="2"> из очереди Tail в список Next</label><br>
@@ -472,7 +519,9 @@ OD
             <div class="question">
                 <p>16)Что это за  метод ?</p>
                 <pre><code>
-
+P → Next := NULL
+tail → next := p
+tail := p
                 </code></pre><br>
                 <label><input type="radio" name="q17" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q17" value="2"> из очереди Tail в список Next</label><br>
@@ -482,7 +531,20 @@ OD
             <div class="question">
                 <p>17)Что это за  метод ?</p>
                 <pre><code>
-
+L := 1 Kn
+    DO (L < R)
+        m := (L + R)| 2
+        IF ( A [ R [ m ] ] < x] )
+            L := m + 1
+        ELSE
+            R := m
+        FI
+    OD
+IF (A[b[R]] = x)
+    НАЙДЕ = да
+ELSE
+    НАЙДЕН = нет
+FI
                 </code></pre><br>
                 <label><input type="radio" name="q18" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q18" value="2"> из очереди Tail в список Next</label><br>
@@ -492,7 +554,26 @@ OD
             <div class="question">
                 <p>18)Что это за  метод ?</p>
                 <pre><code>
-
+DO (j := L, L - 1, ...1)
+    DO (i := 0, 1,... 255)
+        Q1.Tail := @ Q_1.Head
+    OD
+    P := S
+    k = k DI[j]
+    DO (P ≠ NULL)
+        d := P → Digit[k]
+        Qd.Tail → Next := P
+        Qd.Tail := P
+        P := P → Next
+    OD
+    P := @S
+    DO (i := 0, 1,... 255)
+        IF (Qi.Tail ≠ Qi.Head)
+            P := Qi.Tail
+        FI
+    OD
+    P→Next := NUL
+OD
                 </code></pre><br>
                 <label><input type="radio" name="q19" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q19" value="2"> из очереди Tail в список Next</label><br>
@@ -502,7 +583,13 @@ OD
             <div class="question">
                 <p>19)Что это за  метод ?</p>
                 <pre><code>
-
+Stuct + LE{
+    LE * Next;
+    UNION{
+        tData Data;
+        BYTE Digit[sizeof(tData)]
+    }
+}
                 </code></pre><br>
                 <label><input type="radio" name="q20" value="1"> из списка Next в очередь Tail</label><br>
                 <label><input type="radio" name="q20" value="2"> из очереди Tail в список Next</label><br>
