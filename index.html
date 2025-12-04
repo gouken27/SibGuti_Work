@@ -63,6 +63,11 @@
             <option value="siaod2">СиАОД 2 семестр</option>
             <option value="siaod3">СиАОД 3 семестр</option>
             <option value="electroteh">Электротехника 3 семестр</option>
+            <option value="Ccode">C/C++(самодельный)</option>
+            <option value="physics">Физика</option>
+            <option value="english">English</option>
+            <option value="Java">Java(самодельный)</option>
+            <option value="prog">Програмирование(Самодельный)</option>
         </select>
     </div>
 
@@ -238,7 +243,7 @@
 DO ( i := 1, 2, ... n-1)
     k := i
     DO  ( j := i+1, i+2,… ,n )
-            IF ( a_j < a_k )  k := j   FI     
+            IF ( a_j < a_k )  k := j   FI
         OD
         a_i <--> a_k 
 OD
@@ -422,13 +427,13 @@ OD
 IF (L < j) QuickSort(L, j) FI
 IF (i < R) QuickSort(i, R) FI
                 </code></pre><br>
-                <label><input type="radio" name="q11" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q11" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q11" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q11" value="4"> из очереди Q в список List</label>
+                <label><input type="radio" name="q11" value="1"> QuickSort</label><br>
+                <label><input type="radio" name="q11" value="2"> Рекуурссивная печать списка</label><br>
+                <label><input type="radio" name="q11" value="3"> DigitalSort</label><br>
+                <label><input type="radio" name="q11" value="4"> Добавление в пустую очередь</label>
             </div>
             <div class="question">
-                <p>Что это за  метод ?</p>
+                <p>12)Что это за  метод ?</p>
                 <pre><code>
 DO (q ≠ 0 И r ≠ 0)
     IF (a → Data ≤ b → Data)
@@ -448,13 +453,13 @@ DO (r > 0)
     r := r - 1
 OD
                 </code></pre><br>
-                <label><input type="radio" name="q12" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q12" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q12" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q12" value="4"> из очереди Q в список List</label>
+                <label><input type="radio" name="q12" value="1"> добавление в очередь по адресу</label><br>
+                <label><input type="radio" name="q12" value="2"> добавление в стек</label><br>
+                <label><input type="radio" name="q12" value="3"> Слияние серий</label><br>
+                <label><input type="radio" name="q12" value="4"> BinarySearch 2</label>
             </div>
             <div class="question">
-                <p>12)Что это за  метод ?</p>
+                <p>13)Что это за  метод ?</p>
                 <pre><code>
 i := 0
 DO
@@ -466,13 +471,13 @@ DO
     i := i + 1
 OD (i = m)
                 </code></pre><br>
-                <label><input type="radio" name="q13" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q13" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q13" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q13" value="4"> из очереди Q в список List</label>
+                <label><input type="radio" name="q13" value="1"> Пострроение индексного массива</label><br>
+                <label><input type="radio" name="q13" value="2"> Вставка в хеш</label><br>
+                <label><input type="radio" name="q13" value="3"> SelectSearch</label><br>
+                <label><input type="radio" name="q13" value="4"> Соединение списка</label>
             </div>
             <div class="question">
-                <p>13)Что это за  метод ?</p>
+                <p>14)Что это за  метод ?</p>
                 <pre><code>
 i := 0
 DO
@@ -483,13 +488,13 @@ DO
     i := i + 1
 OD (T[i] = 0 OR i = m)
                 </code></pre><br>
-                <label><input type="radio" name="q14" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q14" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q14" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q14" value="4"> из очереди Q в список List</label>
+                <label><input type="radio" name="q14" value="1"> Перенос в очередь</label><br>
+                <label><input type="radio" name="q14" value="2"> BubbleSort</label><br>
+                <label><input type="radio" name="q14" value="3"> Добавление в список</label><br>
+                <label><input type="radio" name="q14" value="4"> Поиск в хеше</label>
             </div>
             <div class="question">
-                <p>14)Что это за  метод ?</p>
+                <p>15)Что это за  метод ?</p>
                 <pre><code>
 P → Next := NULL
 IF (Head ≠ NULL)
@@ -499,37 +504,37 @@ ELSE
 FI
 Tail := P
                 </code></pre><br>
-                <label><input type="radio" name="q15" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q15" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q15" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q15" value="4"> из очереди Q в список List</label>
-            </div>
-            <div class="question">
-                <p>15)Что это за  метод ?</p>
-                <pre><code>
-P → Next := NULL
-head := p
-tail := p
-                </code></pre><br>
-                <label><input type="radio" name="q16" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q16" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q16" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q16" value="4"> из очереди Q в список List</label>
+                <label><input type="radio" name="q15" value="1"> Добавление в очередь по адресу</label><br>
+                <label><input type="radio" name="q15" value="2"> Проблема грудины рекурсии</label><br>
+                <label><input type="radio" name="q15" value="3"> Печать списка</label><br>
+                <label><input type="radio" name="q15" value="4"> Двоичный поиск 1</label>
             </div>
             <div class="question">
                 <p>16)Что это за  метод ?</p>
                 <pre><code>
 P → Next := NULL
-tail → next := p
+head := p
 tail := p
                 </code></pre><br>
-                <label><input type="radio" name="q17" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q17" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q17" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q17" value="4"> из очереди Q в список List</label>
+                <label><input type="radio" name="q16" value="1"> Digital Sort</label><br>
+                <label><input type="radio" name="q16" value="2"> Добавление в пустую очередь</label><br>
+                <label><input type="radio" name="q16" value="3"> Heap Sort</label><br>
+                <label><input type="radio" name="q16" value="4"> Поиск в хеше</label>
             </div>
             <div class="question">
                 <p>17)Что это за  метод ?</p>
+                <pre><code>
+P → Next := NULL
+tail → next := p
+tail := p
+                </code></pre><br>
+                <label><input type="radio" name="q17" value="1"> Shell Sort</label><br>
+                <label><input type="radio" name="q17" value="2"> Вставка в хеш</label><br>
+                <label><input type="radio" name="q17" value="3"> Добавление в полную очередь</label><br>
+                <label><input type="radio" name="q17" value="4"> Выделение памяти</label>
+            </div>
+            <div class="question">
+                <p>18)Что это за  метод ?</p>
                 <pre><code>
 L := 1 Kn
     DO (L < R)
@@ -552,7 +557,7 @@ FI
                 <label><input type="radio" name="q18" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>18)Что это за  метод ?</p>
+                <p>19)Что это за  метод ?</p>
                 <pre><code>
 DO (j := L, L - 1, ...1)
     DO (i := 0, 1,... 255)
@@ -581,7 +586,7 @@ OD
                 <label><input type="radio" name="q19" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>19)Что это за  метод ?</p>
+                <p>20)Что это за  метод ?</p>
                 <pre><code>
 Stuct + LE{
     LE * Next;
@@ -591,33 +596,37 @@ Stuct + LE{
     }
 }
                 </code></pre><br>
-                <label><input type="radio" name="q20" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q20" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q20" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q20" value="4"> из очереди Q в список List</label>
-            </div>
-            <div class="question">
-                <p>20)Что это за  метод ?</p>
-                <pre><code>
-
-                </code></pre><br>
-                <label><input type="radio" name="q21" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q21" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q21" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q21" value="4"> из очереди Q в список List</label>
+                <label><input type="radio" name="q20" value="1"> Размещение списка S</label><br>
+                <label><input type="radio" name="q20" value="2"> Соединение дввух очередей</label><br>
+                <label><input type="radio" name="q20" value="3"> DigitalSort</label><br>
+                <label><input type="radio" name="q20" value="4"> Структура DigitalSort</label>
             </div>
             <div class="question">
                 <p>21)Что это за  метод ?</p>
                 <pre><code>
-
+Q.Tail → Next = List
+Q.Tail = List
+List = List → Next
                 </code></pre><br>
-                <label><input type="radio" name="q22" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q22" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q22" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q22" value="4"> из очереди Q в список List</label>
+                <label><input type="radio" name="q21" value="1"> Перенос из списка в очередь</label><br>
+                <label><input type="radio" name="q21" value="2"> Структура DigitalSort</label><br>
+                <label><input type="radio" name="q21" value="3"> Вставка в хеш</label><br>
+                <label><input type="radio" name="q21" value="4"> Печать списка</label>
             </div>
             <div class="question">
                 <p>22)Что это за  метод ?</p>
+                <pre><code>
+p  = head
+head = p → next
+(delete p)
+                </code></pre><br>
+                <label><input type="radio" name="q22" value="1"> Добавление в список</label><br>
+                <label><input type="radio" name="q22" value="2"> InsertSort</label><br>
+                <label><input type="radio" name="q22" value="3"> Слияние серий</label><br>
+                <label><input type="radio" name="q22" value="4"> ShellSort</label>
+            </div>
+            <div class="question">
+                <p>23)Что это за  метод ?</p>
                 <pre><code>
 
                 </code></pre><br>
@@ -627,7 +636,7 @@ Stuct + LE{
                 <label><input type="radio" name="q23" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>23)Что это за  метод ?</p>
+                <p>24)Что это за  метод ?</p>
                 <pre><code>
 
                 </code></pre><br>
@@ -637,7 +646,7 @@ Stuct + LE{
                 <label><input type="radio" name="q24" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>24)Что это за  метод ?</p>
+                <p>25)Что это за  метод ?</p>
                 <pre><code>
 
                 </code></pre><br>
@@ -647,76 +656,90 @@ Stuct + LE{
                 <label><input type="radio" name="q25" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
-                <p>25)Что это за  метод ?</p>
-                <pre><code>
-
-                </code></pre><br>
-                <label><input type="radio" name="q26" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q26" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q26" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q26" value="4"> из очереди Q в список List</label>
-            </div>
-            <div class="question">
                 <p>26)Что это за  метод ?</p>
                 <pre><code>
-
+S.tail → next = a.head
+S.tail = Q.tail
                 </code></pre><br>
-                <label><input type="radio" name="q27" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q27" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q27" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q27" value="4"> из очереди Q в список List</label>
+                <label><input type="radio" name="q26" value="1"> Проблема грудины рекурсии</label><br>
+                <label><input type="radio" name="q26" value="2"> Соединение двух очередей</label><br>
+                <label><input type="radio" name="q26" value="3"> Печать списка</label><br>
+                <label><input type="radio" name="q26" value="4"> SelectSort</label>
             </div>
             <div class="question">
                 <p>27)Что это за  метод ?</p>
                 <pre><code>
-
+tail = (t LE *) & head
                 </code></pre><br>
-                <label><input type="radio" name="q28" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q28" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q28" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q28" value="4"> из очереди Q в список List</label>
+                <label><input type="radio" name="q27" value="1"> InsertSort</label><br>
+                <label><input type="radio" name="q27" value="2"> Построение индексного массива</label><br>
+                <label><input type="radio" name="q27" value="3"> Инициализация очереди</label><br>
+                <label><input type="radio" name="q27" value="4"> Добавление в полную очередь</label>
             </div>
             <div class="question">
                 <p>28)Что это за  метод ?</p>
                 <pre><code>
 
                 </code></pre><br>
-                <label><input type="radio" name="q29" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q29" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q29" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q29" value="4"> из очереди Q в список List</label>
+                <label><input type="radio" name="q28" value="1"> Размещение списка S</label><br>
+                <label><input type="radio" name="q28" value="2"> из очереди Tail в список Next</label><br>
+                <label><input type="radio" name="q28" value="3"> из списка List в очередь Q</label><br>
+                <label><input type="radio" name="q28" value="4"> из очереди Q в список List</label>
             </div>
             <div class="question">
                 <p>29)Что это за  метод ?</p>
                 <pre><code>
-
+longfact (int n){
+    IF (n < 0) return 0
+    IF (n = 0) return 1
+    return(n * faact(n-1))
+}
                 </code></pre><br>
-                <label><input type="radio" name="q30" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q30" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q30" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q30" value="4"> из очереди Q в список List</label>
+                <label><input type="radio" name="q29" value="1"> Соединение двух очередей</label><br>
+                <label><input type="radio" name="q29" value="2"> Размещение списка S</label><br>
+                <label><input type="radio" name="q29" value="3"> Печать списка</label><br>
+                <label><input type="radio" name="q29" value="4"> Проблема грудины рекурсии</label>
             </div>
             <div class="question">
                 <p>30)Что это за  метод ?</p>
                 <pre><code>
-
+p = head
+DO(p ≠ NULL)
+    p = p → next
+OD
                 </code></pre><br>
-                <label><input type="radio" name="q31" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q31" value="2"> Рекурсивнаая печать списка</label><br>
-                <label><input type="radio" name="q31" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q31" value="4"> из очереди Q в список List</label>
+                <label><input type="radio" name="q30" value="1"> Печать списка</label><br>
+                <label><input type="radio" name="q30" value="2"> Добавление в список</label><br>
+                <label><input type="radio" name="q30" value="3"> BubbleSort</label><br>
+                <label><input type="radio" name="q30" value="4"> DigitalSort</label>
             </div>
             <div class="question">
                 <p>31)Что это за  метод ?</p>
                 <pre><code>
+void pech(list * & p){
+    if(p! = NULL){
+    printf(p → elem)
+    pech(p → next)
+    printf(p → elem)
+    }
+}
+                </code></pre><br>
+                <label><input type="radio" name="q31" value="1"> Рекурссивная печать списка</label><br>
+                <label><input type="radio" name="q31" value="2"> Оптимизированная постановка в очередь</label><br>
+                <label><input type="radio" name="q31" value="3"> Структура для DigitalSort</label><br>
+                <label><input type="radio" name="q31" value="4"> Соединение двух  очередей</label>
+            </div>
+            <div class="question">
+                <p>32)Что это за  метод ?</p>
+                <pre><code>
 <Выделение памяти по адресу>
-P -> data = <данные>
-P -> next = head
+P → data = <данные>
+P → next = head
 head = p
                 </code></pre><br>
-                <label><input type="radio" name="q32" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q32" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q32" value="3"> из списка List в очередь Q</label><br>
+                <label><input type="radio" name="q32" value="1"> Двоичный поиск с индексированием</label><br>
+                <label><input type="radio" name="q32" value="2"> Heap sort</label><br>
+                <label><input type="radio" name="q32" value="3"> Добавление в пустую очередь</label><br>
                 <label><input type="radio" name="q32" value="4"> Добавление в стек</label>
             </div>
             <button type="button" onclick="checkTest('siaod2_pseudocode')">Проверить</button>
@@ -7650,12 +7673,12 @@ head = p
         // Объект с тестами
     const tests = {
         siaod2_pseudocode: { 
-            answers: {q1: '3', q2: '1', q3: '2', q4: '', q5: '', q6: '', q7: '', q8: '', q9: '', q10: '',
-            q11: '', q12: '', q13: '', q14: '', q15: '', q16: '', q17: '', q18: '', q19: '', q20: '',
+            answers: {q1: '3', q2: '1', q3: '2', q4: '3', q5: '4', q6: '2', q7: '2', q8: '1', q9: '4', q10: '2',
+            q11: '1', q12: '3', q13: '2', q14: '4', q15: '1', q16: '2', q17: '', q18: '', q19: '', q20: '',
             q21: '', q22: '', q23: '', q24: '', q25: '', q26: '', q27: '', q28: '', q29: '', q30: '', q31: '', q32: ''}, 
             questions: 32
         },
-        siaod2_variant1: { 
+        siaod2_variant1: {
             answers: { q1: '1', q2: '1', q3: '1', q4: '3', q5: '2', q6: '1', q7: '3', q8: '2', q9:'2', q10: '3' }, 
             questions: 10 
         },
