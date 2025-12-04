@@ -109,7 +109,7 @@
             <option value="siaod2_variant4">Вариант 4</option>
             <option value="siaod2_variant5">Вариант 5</option>
             <option value="siaod2_variant6">Вариант 6</option>
-            <option value="siaod2_variant6">Вариант 7</option>
+            <option value="siaod2_variant7">Вариант 7</option>
             <option value="siaod2_variant8">Вариант 8</option>
             <option value="siaod2_variant9">Вариант 9</option>
             <option value="siaod2_variant10">Вариант 10</option>
@@ -551,10 +551,10 @@ ELSE
     НАЙДЕН = нет
 FI
                 </code></pre><br>
-                <label><input type="radio" name="q18" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q18" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q18" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q18" value="4"> из очереди Q в список List</label>
+                <label><input type="radio" name="q18" value="1"> Построение пирамиды</label><br>
+                <label><input type="radio" name="q18" value="2"> Quick Sort</label><br>
+                <label><input type="radio" name="q18" value="3"> Двоичный поиск с индексированием</label><br>
+                <label><input type="radio" name="q18" value="4"> Выделение памяти</label>
             </div>
             <div class="question">
                 <p>19)Что это за  метод ?</p>
@@ -580,10 +580,10 @@ DO (j := L, L - 1, ...1)
     P→Next := NUL
 OD
                 </code></pre><br>
-                <label><input type="radio" name="q19" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q19" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q19" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q19" value="4"> из очереди Q в список List</label>
+                <label><input type="radio" name="q19" value="1"> Слияние серий</label><br>
+                <label><input type="radio" name="q19" value="2"> Двоичный поиск 5</label><br>
+                <label><input type="radio" name="q19" value="3"> Shaker Sort</label><br>
+                <label><input type="radio" name="q19" value="4"> Digital Sort</label>
             </div>
             <div class="question">
                 <p>20)Что это за  метод ?</p>
@@ -628,32 +628,59 @@ head = p → next
             <div class="question">
                 <p>23)Что это за  метод ?</p>
                 <pre><code>
-
+Strut tData { ... };
+    tData * p;
+C++:p = new t Data;
+    delete p;
+C : p = (struct++tData)malloc(sizeof(strut tData));
+free (p);
                 </code></pre><br>
-                <label><input type="radio" name="q23" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q23" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q23" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q23" value="4"> из очереди Q в список List</label>
+                <label><input type="radio" name="q23" value="1"> Оптимизированая постановка в очередь</label><br>
+                <label><input type="radio" name="q23" value="2"> Shell Sort</label><br>
+                <label><input type="radio" name="q23" value="3"> Добавление в стек</label><br>
+                <label><input type="radio" name="q23" value="4"> Выделение памяти</label>
             </div>
             <div class="question">
                 <p>24)Что это за  метод ?</p>
                 <pre><code>
-
+<СортировкаСлиянием (S, a, b, n)>
+p = 1
+DO(p < n)
+<Инициализация очередей C_0, C_1>
+    i = 0
+    m = n
+    DO(m > 0)
+        IF(m ≥ p)
+            q = p
+            r = p
+        ELSE
+            q = m
+            r = 0
+        FI
+        m = m - q - r
+        <Слияние(a, q, b, r, c, i)>
+        i = 1 - i
+    OD
+    <Обмен a и b>
+    p = p * 2
+OD
+S = a
                 </code></pre><br>
-                <label><input type="radio" name="q24" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q24" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q24" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q24" value="4"> из очереди Q в список List</label>
+                <label><input type="radio" name="q24" value="1"> Quick Sort</label><br>
+                <label><input type="radio" name="q24" value="2"> Select Sort</label><br>
+                <label><input type="radio" name="q24" value="3"> Insert Sort</label><br>
+                <label><input type="radio" name="q24" value="4"> Merge Sort</label>
             </div>
             <div class="question">
                 <p>25)Что это за  метод ?</p>
                 <pre><code>
-
+1)tail → next = p
+2)tail = p
                 </code></pre><br>
-                <label><input type="radio" name="q25" value="1"> из списка Next в очередь Tail</label><br>
-                <label><input type="radio" name="q25" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q25" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q25" value="4"> из очереди Q в список List</label>
+                <label><input type="radio" name="q25" value="1"> Структура для Digital Sort</label><br>
+                <label><input type="radio" name="q25" value="2"> Слияние серий</label><br>
+                <label><input type="radio" name="q25" value="3"> Оптимизированая постановка в очередь</label><br>
+                <label><input type="radio" name="q25" value="4"> Выделение памяти</label>
             </div>
             <div class="question">
                 <p>26)Что это за  метод ?</p>
@@ -679,12 +706,22 @@ tail = (t LE *) & head
             <div class="question">
                 <p>28)Что это за  метод ?</p>
                 <pre><code>
-
+Расщепление (S,a,b,n)
+n - количество элементов в S
+k, S - раабочие указатели
+a = S, b = S → Next n = 1
+k = a , p = b
+    DO (p ≠ NULL)
+        n = n + 1
+        k → next = p → next
+        k = p
+        p = p → next
+    OD
                 </code></pre><br>
                 <label><input type="radio" name="q28" value="1"> Размещение списка S</label><br>
-                <label><input type="radio" name="q28" value="2"> из очереди Tail в список Next</label><br>
-                <label><input type="radio" name="q28" value="3"> из списка List в очередь Q</label><br>
-                <label><input type="radio" name="q28" value="4"> из очереди Q в список List</label>
+                <label><input type="radio" name="q28" value="2"> Добавление в пустую очередь</label><br>
+                <label><input type="radio" name="q28" value="3"> Инициализаця очереди</label><br>
+                <label><input type="radio" name="q28" value="4"> Heap Sort</label>
             </div>
             <div class="question">
                 <p>29)Что это за  метод ?</p>
@@ -1101,22 +1138,23 @@ head = p
         <h2>СиАОД 2 семестр - Вариант 6</h2>
         <form id="siaod2_variant6-form">
             <div class="question">
-                <p></p>
-                <label><input type="radio" name="q1" value="1"></label><br>
-                <label><input type="radio" name="q1" value="2"></label><br>
-                <label><input type="radio" name="q1" value="3"></label>
+                <p>Дерево относится</p>
+                <label><input type="radio" name="q1" value="1">к статическим данным</label><br>
+                <label><input type="radio" name="q1" value="2">к динамическим данным</label><br>
+                <label><input type="radio" name="q1" value="3">к адаптивным данным</label>
             </div>
             <div class="question">
-                <p></p>
-                <label><input type="radio" name="q2" value="1"></label><br>
-                <label><input type="radio" name="q2" value="2"></label><br>
-                <label><input type="radio" name="q2" value="3"></label>
+                <p>В массиве, отсортированном прямом порядке, количество серий равно</p>
+                <label><input type="radio" name="q2" value="1">единице</label><br>
+                <label><input type="radio" name="q2" value="2">нулю</label><br>
+                <label><input type="radio" name="q2" value="3">количеству элементов в массиве</label>
             </div>
             <div class="question">
-                <p></p>
-                <label><input type="radio" name="q3" value="1"></label><br>
-                <label><input type="radio" name="q3" value="2"></label><br>
-                <label><input type="radio" name="q3" value="3"></label>
+                <p>При оценке эффективности сортировки учитывают операции</p>
+                <label><input type="radio" name="q3" value="1">сравнения элементов</label><br>
+                <label><input type="radio" name="q3" value="2">пересылки элементов</label><br>
+                <label><input type="radio" name="q3" value="3">размещения элементов</label><br>
+                <label><input type="radio" name="q4" value="4">чтения элементов</label>
             </div>
             <div class="question">
                 <p></p>
@@ -7670,12 +7708,11 @@ head = p
 
 
     <script>
-        // Объект с тестами
     const tests = {
         siaod2_pseudocode: { 
             answers: {q1: '3', q2: '1', q3: '2', q4: '3', q5: '4', q6: '2', q7: '2', q8: '1', q9: '4', q10: '2',
-            q11: '1', q12: '3', q13: '2', q14: '4', q15: '1', q16: '2', q17: '', q18: '', q19: '', q20: '',
-            q21: '', q22: '', q23: '', q24: '', q25: '', q26: '', q27: '', q28: '', q29: '', q30: '', q31: '', q32: ''}, 
+            q11: '1', q12: '3', q13: '2', q14: '4', q15: '1', q16: '2', q17: '3', q18: '3', q19: '4', q20: '4',
+            q21: '1', q22: '1', q23: '4', q24: '4', q25: '3', q26: '2', q27: '3', q28: '1', q29: '4', q30: '1', q31: '1', q32: '4'}, 
             questions: 32
         },
         siaod2_variant1: {
@@ -8145,10 +8182,15 @@ head = p
 
     function checkTest(testId) {
         const form = document.getElementById(testId + '-form');
+        if (!form) return;
         const error = document.getElementById(testId + '-error');
         const result = document.getElementById(testId + '-result');
-        const correctAnswers = tests[testId].answers;
-        const totalQuestions = tests[testId].questions;
+        const testDef = tests[testId] || { answers: {}, questions: 0 };
+        const correctAnswers = testDef.answers || {};
+
+        // количество вопросов берём прямо из формы (количество блоков .question)
+        const questionNodes = Array.from(form.querySelectorAll('.question'));
+        const totalQuestions = questionNodes.length;
 
         let allAnswered = true;
         let score = 0;
@@ -8158,43 +8200,65 @@ head = p
             label.style.color = 'white';
         });
 
-        for (let i = 1; i <= totalQuestions; i++) {
-            const questionGroup = form.querySelector(`.question:nth-of-type(${i})`);
-            const selected = questionGroup.querySelector(`input[name="q${i}"]:checked`);
-            if (!selected) {
+        for (let idx = 0; idx < totalQuestions; idx++) {
+            const i = idx + 1;
+            const questionGroup = questionNodes[idx];
+            if (!questionGroup) {
                 allAnswered = false;
                 break;
             }
-            const isCorrect = selected.value === correctAnswers[`q${i}`];
-            if (isCorrect) {
-                score++;
+
+            const selected = questionGroup.querySelector(`input[name="q${i}"]:checked`);
+            if (!selected) {
+                allAnswered = false;
+                // не прерываем здесь цикл — чтобы не ломать дальнейшую логику подсветки/блокировки, но можно
+                break;
             }
 
-            // Подсветка выбранного
-            const selectedLabel = selected.parentElement;
-            selectedLabel.style.color = isCorrect ? '#4dff4d' : '#ff4d4d';
+            const key = `q${i}`;
+            const correct = correctAnswers[key];
 
-            // Подсветка правильного, если выбран неверный
-            if (!isCorrect) {
-                const correctInput = questionGroup.querySelector(`input[value="${correctAnswers[`q${i}`]}"]`);
-                if (correctInput) {
-                    const correctLabel = correctInput.parentElement;
-                    correctLabel.style.color = '#4dff4d';
+            // поддержка нескольких правильных ответов (массив) или одиночного значения
+            let isCorrect = false;
+            if (Array.isArray(correct)) {
+                isCorrect = correct.includes(selected.value);
+            } else {
+                isCorrect = (selected.value === correct);
+            }
+
+            if (isCorrect) score++;
+
+            // подсветка выбранного ответа
+            const selectedLabel = selected.parentElement;
+            if (selectedLabel) selectedLabel.style.color = isCorrect ? '#4dff4d' : '#ff4d4d';
+
+            // подсветка правильного(ых), если выбран неверно и задана правильная(ые) опция(и)
+            if (!isCorrect && (correct !== undefined && correct !== '')) {
+                if (Array.isArray(correct)) {
+                    correct.forEach(cv => {
+                        const correctInput = questionGroup.querySelector(`input[value="${cv}"]`);
+                        if (correctInput && correctInput.parentElement) correctInput.parentElement.style.color = '#4dff4d';
+                    });
+                } else {
+                    const correctInput = questionGroup.querySelector(`input[value="${correct}"]`);
+                    if (correctInput && correctInput.parentElement) correctInput.parentElement.style.color = '#4dff4d';
                 }
             }
 
-            // Disable inputs
+            // блокируем inputs для данной вопросной группы
             questionGroup.querySelectorAll('input').forEach(inp => inp.disabled = true);
         }
 
-        error.style.display = 'none';
-        result.style.display = 'none';
+        if (error) error.style.display = 'none';
+        if (result) result.style.display = 'none';
 
         if (!allAnswered) {
-            error.style.display = 'block';
+            if (error) error.style.display = 'block';
         } else {
-            result.textContent = `Вы правильно ответили на ${score} из ${totalQuestions} вопросов.`;
-            result.style.display = 'block';
+            if (result) {
+                result.textContent = `Вы правильно ответили на ${score} из ${totalQuestions} вопрос(ов).`;
+                result.style.display = 'block';
+            }
         }
     }
     </script>
